@@ -4,17 +4,23 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>
-	<div>Add Category Page</div>
+<body style="width: 50%; margin: auto">
+	<div th:if="${msg}">
+		<span th:text=${msg}></span>
+	</div>
+	<div >Add Category Page</div>
 	<form th:action="@{/addCate}" th:object="${cate}">
 		<div style="margin: auto">
 			<label>Category Name: </label>
 			<div>
-				<input type="text" th:field="*{catename}" value="catename" required />
+				<input type="text" th:field="*{categoryName}" value="categoryName" required />
 			</div>
 		</div>
 		<div style="margin: auto">
 			<button type="submit">Add</button>
+		</div>
+		<div>
+			<a th:href="@{/home}">Back to home</a>
 		</div>
 	</form>
 </body>

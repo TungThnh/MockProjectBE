@@ -9,22 +9,22 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "category")
-public class category {
+public class Category {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "category_id")
-	private int categoryID;
+	private Integer categoryID;
 	
 	@Column(name = "category_name")
 	private String categoryName;
 	
 	@Column(name = "status")
-	private boolean status;
-	public category() {
+	private Boolean status;
+	public Category() {
 		
 	}
-	public category(int categoryID, String categoryName, boolean status) {
+	public Category(int categoryID, String categoryName, boolean status) {
 		this.categoryID = categoryID;
 		this.categoryName = categoryName;
 		this.status = status;

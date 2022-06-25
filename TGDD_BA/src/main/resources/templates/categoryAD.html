@@ -15,6 +15,9 @@ td {
 <title>Insert title here</title>
 </head>
 <body>
+	<div th:if="${msg}">
+		<span th:text=${msg}></span>
+	</div>
 	<table style="width: 50%; margin: auto">
 		<tr>
 			<th>ID</th>
@@ -27,9 +30,12 @@ td {
 			<td th:text="${LIST_CATE.categoryID}"></td>
 			<td th:text="${LIST_CATE.categoryName}"></td>
 			<td><input type="checkbox" name="active" th:checked="${LIST_CATE.status}" disabled="true"/></td>
-			<td><a th:href="@{/editCatePage/{cateid}(cateid=${LIST_CATE.categoryID})}"> Edit </a></td>
-			<td><a th:href="@{/deleteCate/{cateid}(cateid=${LIST_CATE.categoryID})}"> Delete </a></td>
+			<td><a th:href="@{/editCatePage/{categoryID}(categoryID=${LIST_CATE.categoryID})}"> Edit </a></td>
+			<td><a th:href="@{/deleteCate/{categoryID}(categoryID=${LIST_CATE.categoryID})}"> Delete </a></td>
 		</tr>
 	</table>
+		<div style="width: 40%; margin: auto;">
+			<a th:href="@{/home}">Back to home</a>
+		</div>
 </body>
 </html>

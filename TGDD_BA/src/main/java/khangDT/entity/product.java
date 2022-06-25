@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "product")
-public class product {
+public class Product {
 
 	@Id
 	@Column(name = "product_id")
@@ -17,22 +17,22 @@ public class product {
 	private String productName;
 	
 	@Column(name = "price")
-	private int price;
+	private Integer price;
 	
 	@Column(name = "manufacturer_id")
 	private String manufacturerID;
 	
 	@Column(name = "category_id")
-	private int categoryID;
+	private Integer categoryID;
 	
 	@Column(name = "product_warranty")
-	private int productWarranty;
+	private Integer productWarranty;
 	
 	@Column(name = "image")
 	private String image;
 	
 	@Column(name = "interes_rate")
-	private float interesRate;
+	private Float interesRate;
 	
 	@Column(name = "excusive")
 	private String excusive;
@@ -41,11 +41,11 @@ public class product {
 	private String accessoriesIncluded;
 	
 	@Column(name = "status")
-	private boolean status;
-	public product() {
+	private Boolean status;
+	public Product() {
 
 	}
-	public product(String productID, String productName, int price, String manufacturerID, int categoryID,
+	public Product(String productID, String productName, int price, String manufacturerID, int categoryID,
 			int productWarranty, String image, float interesRate, String excusive, String accessoriesIncluded,
 			boolean status) {
 		super();
