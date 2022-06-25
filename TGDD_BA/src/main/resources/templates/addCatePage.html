@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>Add Category Page</div>
+	<form th:action="@{/addCate}" th:object="${cate}">
+		<div style="margin: auto">
+			<label>Category Name: </label>
+			<div>
+				<input type="text" th:field="*{catename}" value="catename" required />
+			</div>
+		</div>
+		<div style="margin: auto">
+			<button type="submit">Add</button>
+		</div>
+	</form>
+</body>
+</html>
