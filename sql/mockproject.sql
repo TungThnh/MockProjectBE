@@ -9,7 +9,7 @@ CREATE TABLE product
   categoryID INT NOT NULL,
   productWaranty INT NOT NULL,
   image VARCHAR(300) NOT NULL,
-  interesRate INT NOT NULL,
+  interesRate FLOAT NOT NULL,
   excusive INT NOT NULL,
   accessoriesIncluded VARCHAR(200) NOT NULL,
   PRIMARY KEY (productID)
@@ -19,7 +19,7 @@ CREATE TABLE category
 (
   categoryID INT NOT NULL,
   categoryName VARCHAR(50) NOT NULL,
-  status INT NOT NULL,
+  status BOOLEAN NOT NULL,
   productID CHAR(10) NOT NULL,
   PRIMARY KEY (categoryID),
   FOREIGN KEY (productID) REFERENCES product(productID)
@@ -159,27 +159,6 @@ CREATE TABLE city
   cityID INT NOT NULL,
   cityName VARCHAR(100) NOT NULL,
   PRIMARY KEY (cityID)
-);
-
-CREATE TABLE role
-(
-  roleID CHAR(10) NOT NULL,
-  roleName VARCHAR(30) NOT NULL,
-  PRIMARY KEY (roleID)
-);
-
-CREATE TABLE user
-(
-  userID CHAR(10) NOT NULL,
-  firstName VARCHAR(50) NOT NULL,
-  lastName VARCHAR(20) NOT NULL,
-  userName VARCHAR(20) NOT NULL,
-  password VARCHAR(50) NOT NULL,
-  enabled INT NOT NULL,
-  status INT NOT NULL,
-  roleID CHAR(10) NOT NULL,
-  PRIMARY KEY (userID),
-  FOREIGN KEY (roleID) REFERENCES role(roleID)
 );
 
 CREATE TABLE order_detail
