@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<style>
+input[type=file], select {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	background-color: #1affff;
+}
+
+.button {
+	background-color: #4CAF50; /* Green */
+	border: none;
+	color: white;
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin-left: 45%;
+	cursor: pointer;
+}
+
+.button4 {
+	border-radius: 10px;
+}
+
+div {
+	border-radius: 5px;
+	background-color: #a6a6a6;
+	padding: 10px;
+	width: 50%;
+	margin: auto;
+}
+</style>
+<body>
+	<div style="align-items: center;">
+		<h1 style="margin: auto; text-align: center">Add New Product</h1>
+		<br />
+		<form th:action="@{/saveProduct}" th:object="${product_form}"
+			method="post">
+			<table border="0" style="margin: auto">
+				<tr>
+					<td>Product ID:</td>
+					<td><input type="text" th:field="*{productID}"
+						name="productID" /></td>
+				</tr>
+				<tr>
+					<td>Product Name:</td>
+					<td><input type="text" th:field="*{productName}"
+						name="productName" /></td>
+				</tr>
+				<tr>
+					<td>Price:</td>
+					<td><input type="text" th:field="*{price}" name="price" /></td>
+				</tr>
+				<tr>
+					<td>Manufacturer ID:</td>
+					<td><input type="text" th:field="*{manufacturerID}"
+						name="manufacturerID" /></td>
+				</tr>
+				<tr>
+					<td>categoryID:</td>
+					<td>
+					<select th:field="*{categoryID}">
+							<option value="0">select category name</option>
+							<option th:each="list : ${list_cate}"
+								th:value="${list.categoryID}" th:text="${list.categoryName}"></option>
+					</select>
+					</td>
+				</tr>
+				<tr>
+					<td>product Warranty:</td>
+					<td><input type="text" th:field="*{productWarranty}"
+						name="productWarranty" /></td>
+				</tr>
+				<tr>
+					<td>Image:</td>
+					<td><input type="file" th:field="*{imagelink}"
+						multiple="multiple" /></td>
+				</tr>
+				<tr>
+					<td>Interes Rate:</td>
+					<td><input type="text" th:field="*{interesRate}"
+						name="interesRate" /></td>
+				</tr>
+				<tr>
+					<td>Excusive:</td>
+					<td><input type="text" th:field="*{excusive}"
+						name="excusive" /></td>
+				</tr>
+				<tr>
+					<td>Accessories Included :</td>
+					<td><input type="text" th:field="*{accessoriesIncluded}"
+						name="accessoriesIncluded" /></td>
+				</tr>
+				<tr>
+					<td>
+					<td colspan="2"><button type="submit">Save</button></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

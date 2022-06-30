@@ -29,7 +29,7 @@ public class Product {
 	private Integer productWarranty;
 	
 	@Column(name = "image")
-	private String image;
+	private String imagelink;
 	
 	@Column(name = "interes_rate")
 	private Float interesRate;
@@ -45,17 +45,16 @@ public class Product {
 	public Product() {
 
 	}
-	public Product(String productID, String productName, int price, String manufacturerID, int categoryID,
-			int productWarranty, String image, float interesRate, String excusive, String accessoriesIncluded,
-			boolean status) {
-		super();
+	public Product(String productID, String productName, Integer price, String manufacturerID, Integer categoryID,
+			Integer productWarranty, String imagelink, Float interesRate, String excusive, String accessoriesIncluded,
+			Boolean status) {
 		this.productID = productID;
 		this.productName = productName;
 		this.price = price;
 		this.manufacturerID = manufacturerID;
 		this.categoryID = categoryID;
 		this.productWarranty = productWarranty;
-		this.image = image;
+		this.imagelink = imagelink;
 		this.interesRate = interesRate;
 		this.excusive = excusive;
 		this.accessoriesIncluded = accessoriesIncluded;
@@ -73,10 +72,10 @@ public class Product {
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-	public int getPrice() {
+	public Integer getPrice() {
 		return price;
 	}
-	public void setPrice(int price) {
+	public void setPrice(Integer price) {
 		this.price = price;
 	}
 	public String getManufacturerID() {
@@ -85,28 +84,28 @@ public class Product {
 	public void setManufacturerID(String manufacturerID) {
 		this.manufacturerID = manufacturerID;
 	}
-	public int getCategoryID() {
+	public Integer getCategoryID() {
 		return categoryID;
 	}
-	public void setCategoryID(int categoryID) {
+	public void setCategoryID(Integer categoryID) {
 		this.categoryID = categoryID;
 	}
-	public int getProductWarranty() {
+	public Integer getProductWarranty() {
 		return productWarranty;
 	}
-	public void setProductWarranty(int productWarranty) {
+	public void setProductWarranty(Integer productWarranty) {
 		this.productWarranty = productWarranty;
 	}
-	public String getImage() {
-		return image;
+	public String getImagelink() {
+		return imagelink;
 	}
-	public void setImage(String image) {
-		this.image = image;
+	public void setImagelink(String imagelink) {
+		this.imagelink = imagelink;
 	}
-	public float getInteresRate() {
+	public Float getInteresRate() {
 		return interesRate;
 	}
-	public void setInteresRate(float interesRate) {
+	public void setInteresRate(Float interesRate) {
 		this.interesRate = interesRate;
 	}
 	public String getExcusive() {
@@ -121,10 +120,10 @@ public class Product {
 	public void setAccessoriesIncluded(String accessoriesIncluded) {
 		this.accessoriesIncluded = accessoriesIncluded;
 	}
-	public boolean isStatus() {
+	public Boolean getStatus() {
 		return status;
 	}
-	public void setStatus(boolean status) {
+	public void setStatus(Boolean status) {
 		this.status = status;
 	}
 	
