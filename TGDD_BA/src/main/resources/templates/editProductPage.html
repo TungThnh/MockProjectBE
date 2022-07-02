@@ -4,58 +4,92 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
+<style>
+input[type=file], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #1affff;
+}
+ 
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 45%;   
+    cursor: pointer;
+}
+ 
+.button4 {
+    border-radius: 10px;
+}
+ 
+div {
+    border-radius: 5px;
+    background-color: #a6a6a6;
+    padding: 10px;
+    width: 50%;
+    margin: auto;
+}
+</style>
 <body>
 	<div align="center">
 		<h1>Edit Product</h1>
 		<br />
-		<form th:action="@{/saveEditProduct}" th:object="${product}"
-			method="post">
-
-			<table border="0" cellpadding="10">
-				<tr>
-					<td>Product ID:</td>
-					<td><input type="text" th:field="*{productID}" readonly="readonly" /></td>
-				</tr>
-				<tr>
-					<td>Product Name:</td>
-					<td><input type="text" th:field="*{productName}" /></td>
-				</tr>
-				<tr>
-					<td>Price:</td>
-					<td><input type="text" th:field="*{price}" /></td>
-				</tr>
-				<tr>
-					<td>Manufacturer :</td>
-					<td><input type="text" th:field="*{manufacturerID}" /></td>
-				</tr>
-				<tr>
-					<td>category :</td>
-					<td><input type="text" th:field="*{categoryID}" /></td>
-				</tr>
-				<tr>
-					<td>Product Warranty :</td>
-					<td><input type="text" th:field="*{productWarranty}" /></td>
-				</tr>
-				<tr>
-					<td>image :</td>
-					<td><input type="image" th:src="*{image}" /></td>
-				</tr>
-				<tr>
-					<td>Interes Rate :</td>
-					<td><input type="text" th:field="*{interesRate}" /></td>
-				</tr>
-				<tr>
-					<td>excusive :</td>
-					<td><input type="text" th:field="*{excusive}" /></td>
-				</tr>
-				<tr>
-					<td>Accessories Included :</td>
-					<td><input type="text" th:field="*{accessoriesIncluded}" /></td>
-				</tr>
-				<tr>
-					<td colspan="2"><button type="submit">Save</button></td>
-				</tr>
-			</table>
+		<form th:action="@{/saveEditProduct}" th:object="${product}" method="post">
+			<div style="margin: auto; width: 50%">
+				<div>
+					Product ID: <input type="text" th:field="*{productID}"
+						readonly="readonly" />
+				</div>
+				<div>
+					Product Name: <input type="text" th:field="*{productName}" />
+				</div>
+				<div>
+					Price: <input type="text" th:field="*{price}" />
+				</div>
+				<div>
+					Manufacturer : <input type="text" th:field="*{manufacturerID}" />
+				</div>
+				<div>
+					category : <input type="text" th:field="*{categoryID}" />
+				</div>
+				<div>
+					Product Warranty : <input type="text" th:field="*{productWarranty}" />
+				</div>
+				<div>
+					<img th:src="${imagelink}" width="80px" height="90px">
+				</div>
+				<div>
+					image : <input type="file" th:field="*{imagelink}"  multiple="multiple"/>
+				</div>
+				<div>
+					Interes Rate : <input type="text" th:field="*{interesRate}" />
+				</div>
+				<div>
+					excusive : <input type="text" th:field="*{excusive}" />
+				</div>
+				<div>
+					Accessories Included : <input type="text"
+						th:field="*{accessoriesIncluded}" />
+				</div>
+				<div>
+					Activation: <input type="checkbox" th:field="*{status}"
+						value="divue" />
+				</div>
+				<div>
+					<td colspan="2"><button type="submit">Save</button>
+				</div>
+			</div>
 		</form>
 	</div>
 </body>
