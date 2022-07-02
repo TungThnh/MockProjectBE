@@ -24,13 +24,6 @@ public class Category {
 	public Category() {
 		
 	}
-	
-	public Category(String categoryName, Boolean status) {
-		super();
-		this.categoryName = categoryName;
-		this.status = status;
-	}
-
 	public Category(int categoryID, String categoryName, boolean status) {
 		this.categoryID = categoryID;
 		this.categoryName = categoryName;

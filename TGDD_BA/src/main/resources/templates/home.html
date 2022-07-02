@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
@@ -20,9 +20,7 @@
 			<h3>
 				<a th:href="@{/getAllProduct}">view product</a>
 			</h3>
-			<h3>
-				<a th:href="@{/addProductPage}">Add New Product</a>
-			</h3>
+			<a th:href="@{/logout}">Logout</a>
 		</div>
 	</div>
 </body>
