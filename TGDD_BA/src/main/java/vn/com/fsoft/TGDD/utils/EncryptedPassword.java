@@ -9,9 +9,9 @@ public class EncryptedPassword {
         return encoder.encode(password);
     }
 
-    public static void main(String[] args) {
-        String rawPassword = "123456";
-        String encodedPassword = encrytePassword(rawPassword);
-        System.out.println(encodedPassword);
-    }
+//    public static void main(String[] args) {
+//        String rawPassword = "123456";
+//        String encodedPassword = encrytePassword(rawPassword);
+//        System.out.println(encodedPassword);
+//    }
 }

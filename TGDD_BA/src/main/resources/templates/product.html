@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <style>
 table, th {
 	border: 1px solid black;
@@ -38,7 +38,9 @@ td {
 			<td th:text="${LIST_PRODUCT.manufacturerID}"></td>
 			<td th:text="${LIST_PRODUCT.categoryID}"></td>
 			<td th:text="${LIST_PRODUCT.productWarranty}"></td>
-			<td th:src="${LIST_PRODUCT.image}"></td>
+			<td width="100">
+				<img alt="" th:src="${LIST_PRODUCT.imagelink}" width="80" height="70">
+			</td>
 			<td th:text="${LIST_PRODUCT.interesRate}"></td>
 			<td th:text="${LIST_PRODUCT.excusive}"></td>
 			<td th:text="${LIST_PRODUCT.accessoriesIncluded}"></td>
