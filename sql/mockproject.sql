@@ -27,9 +27,7 @@ CREATE TABLE manufacturer
 (
   manufacturer_id CHAR(10) NOT NULL,
   manufacturer_name VARCHAR(100) NOT NULL,
-  product_id CHAR(10) NOT NULL,
-  PRIMARY KEY (manufacturer_id),
-  FOREIGN KEY (product_id) REFERENCES product(product_id)
+  PRIMARY KEY (manufacturer_id)
 );
 
 CREATE TABLE color_variant
