@@ -235,7 +235,7 @@ CREATE TABLE `order_detail` (
   KEY `order_detail_ibfk_3` (`customer_id`),
   KEY `fkOrder_detail_idx` (`product_id`),
   CONSTRAINT `fkOrder_detail` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`),
-  CONSTRAINT `order_detail_ibfk_2` FOREIGN KEY (`promo_code_id`) REFERENCES `promo_code` (`promoCodeID`),
+  CONSTRAINT `order_detail_ibfk_2` FOREIGN KEY (`promo_code_id`) REFERENCES `promo_code` (`prom_code_id`),
   CONSTRAINT `order_detail_ibfk_3` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -257,11 +257,11 @@ DROP TABLE IF EXISTS `orders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `orders` (
-  `customerID` int NOT NULL,
-  `timeCreated` date NOT NULL,
-  `billID` int NOT NULL,
-  KEY `billID` (`billID`),
-  CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`billID`) REFERENCES `order_detail` (`bill_id`)
+  `customer_id` int NOT NULL,
+  `time_created` date NOT NULL,
+  `bill_id` int NOT NULL,
+  KEY `orders_ibfk_1` (`bill_id`),
+  CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`bill_id`) REFERENCES `order_detail` (`bill_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -464,7 +464,6 @@ CREATE TABLE `product_detail_tablet` (
   `screen_technology` varchar(45) DEFAULT NULL,
   `resolution` int DEFAULT NULL,
   `screen_size` int DEFAULT NULL,
-  `product_detail_tabletcol` varchar(45) DEFAULT NULL,
   `operating_system` varchar(45) DEFAULT NULL,
   `cpu` varchar(45) DEFAULT NULL,
   `cpu_speed` varchar(45) DEFAULT NULL,
@@ -522,13 +521,13 @@ DROP TABLE IF EXISTS `product_discount`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_discount` (
-  `discountID` int NOT NULL,
-  `discountedPrice` float NOT NULL,
-  `startDate` date NOT NULL,
-  `endDate` date NOT NULL,
-  `productID` varchar(50) NOT NULL,
-  KEY `fkDiscount_idx` (`productID`),
-  CONSTRAINT `fkDiscount` FOREIGN KEY (`productID`) REFERENCES `product` (`product_id`)
+  `discount_id` int NOT NULL,
+  `discounted_price` float NOT NULL,
+  `start_date` date NOT NULL,
+  `end_date` date NOT NULL,
+  `product_id` varchar(50) NOT NULL,
+  KEY `fkDiscount_idx` (`product_id`),
+  CONSTRAINT `fkDiscount` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -550,15 +549,15 @@ DROP TABLE IF EXISTS `product_introduction`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_introduction` (
   `id` int NOT NULL,
-  `productID` varchar(50) NOT NULL,
+  `product_id` varchar(50) NOT NULL,
   `description_1` varchar(3000) NOT NULL,
   `image_1` varchar(300) NOT NULL,
   `description_2` varchar(3000) NOT NULL,
   `image_2` varchar(300) NOT NULL,
   `description_3` varchar(3000) NOT NULL,
   `image_3` varchar(300) NOT NULL,
-  KEY `fkIntro_id_idx` (`productID`),
-  CONSTRAINT `fkIntro_id` FOREIGN KEY (`productID`) REFERENCES `product` (`product_id`)
+  KEY `fkIntro_id_idx` (`product_id`),
+  CONSTRAINT `fkIntro_id` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -579,14 +578,14 @@ DROP TABLE IF EXISTS `product_offer`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_offer` (
-  `offerID` int NOT NULL,
-  `offerDescription` varchar(400) NOT NULL,
-  `startDate` date NOT NULL,
-  `endDate` date NOT NULL,
-  `productID` varchar(50) NOT NULL,
-  PRIMARY KEY (`offerID`),
-  KEY `fkOffer_id_idx` (`productID`),
-  CONSTRAINT `fkOffer_id` FOREIGN KEY (`productID`) REFERENCES `product` (`product_id`)
+  `offer_id` int NOT NULL,
+  `offer_description` varchar(400) NOT NULL,
+  `start_date` date NOT NULL,
+  `end_date` date NOT NULL,
+  `product_id` varchar(50) NOT NULL,
+  PRIMARY KEY (`offer_id`),
+  KEY `fkOffer_id_idx` (`product_id`),
+  CONSTRAINT `fkOffer_id` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -608,10 +607,10 @@ DROP TABLE IF EXISTS `product_specification`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_specification` (
   `id` int NOT NULL,
-  `productSpecification` varchar(300) NOT NULL,
-  `productID` varchar(50) NOT NULL,
-  KEY `fkSpecification_idx` (`productID`),
-  CONSTRAINT `fkSpecification` FOREIGN KEY (`productID`) REFERENCES `product` (`product_id`)
+  `product_specification` varchar(300) NOT NULL,
+  `product_id` varchar(50) NOT NULL,
+  KEY `fkSpecification_idx` (`product_id`),
+  CONSTRAINT `fkSpecification` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -632,14 +631,14 @@ DROP TABLE IF EXISTS `promo_code`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `promo_code` (
-  `promoCodeID` int NOT NULL,
-  `promoCodeName` char(50) NOT NULL,
-  `promoCodeDescription` varchar(400) NOT NULL,
-  `promoType` varchar(20) NOT NULL,
+  `prom_code_id` int NOT NULL,
+  `promo_code_name` char(50) NOT NULL,
+  `promo_code_description` varchar(400) NOT NULL,
+  `promo_type` varchar(20) NOT NULL,
   `discount` float NOT NULL,
-  `startDate` date NOT NULL,
-  `endDate` date NOT NULL,
-  PRIMARY KEY (`promoCodeID`)
+  `start_date` date NOT NULL,
+  `end_date` date NOT NULL,
+  PRIMARY KEY (`prom_code_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -734,21 +733,21 @@ DROP TABLE IF EXISTS `store`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `store` (
-  `storeID` int NOT NULL,
-  `storeName` varchar(100) NOT NULL,
+  `store_id` int NOT NULL,
+  `store_name` varchar(100) NOT NULL,
   `address` varchar(300) NOT NULL,
-  `openHours` varchar(200) NOT NULL,
+  `open_hours` varchar(200) NOT NULL,
   `imageGalleryproduct_articlePath` varchar(300) NOT NULL,
-  `districtID` int NOT NULL,
-  `wardID` int NOT NULL,
-  `cityID` int NOT NULL,
-  PRIMARY KEY (`storeID`),
-  KEY `districtID` (`districtID`),
-  KEY `wardID` (`wardID`),
-  KEY `cityID` (`cityID`),
-  CONSTRAINT `store_ibfk_1` FOREIGN KEY (`districtID`) REFERENCES `district` (`district_id`),
-  CONSTRAINT `store_ibfk_2` FOREIGN KEY (`wardID`) REFERENCES `ward` (`wardID`),
-  CONSTRAINT `store_ibfk_3` FOREIGN KEY (`cityID`) REFERENCES `city` (`city_id`)
+  `district_id` int NOT NULL,
+  `ward_id` int NOT NULL,
+  `city_id` int NOT NULL,
+  PRIMARY KEY (`store_id`),
+  KEY `store_ibfk_1` (`district_id`),
+  KEY `store_ibfk_2` (`ward_id`),
+  KEY `store_ibfk_3` (`city_id`),
+  CONSTRAINT `store_ibfk_1` FOREIGN KEY (`district_id`) REFERENCES `district` (`district_id`),
+  CONSTRAINT `store_ibfk_2` FOREIGN KEY (`ward_id`) REFERENCES `ward` (`ward_id`),
+  CONSTRAINT `store_ibfk_3` FOREIGN KEY (`city_id`) REFERENCES `city` (`city_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -770,10 +769,10 @@ DROP TABLE IF EXISTS `store_product_in_stock`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `store_product_in_stock` (
   `quantity` int NOT NULL,
-  `storeID` int NOT NULL,
-  `productID` varchar(50) NOT NULL,
-  KEY `fkProduct_stock_id_idx` (`productID`),
-  CONSTRAINT `fkProduct_stock_id` FOREIGN KEY (`productID`) REFERENCES `product` (`product_id`)
+  `store_id` int NOT NULL,
+  `product_id` varchar(50) NOT NULL,
+  KEY `fkProduct_stock_id_idx` (`product_id`),
+  CONSTRAINT `fkProduct_stock_id` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -794,9 +793,9 @@ DROP TABLE IF EXISTS `ward`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ward` (
-  `wardID` int NOT NULL,
-  `wardName` varchar(100) NOT NULL,
-  PRIMARY KEY (`wardID`)
+  `ward_id` int NOT NULL,
+  `ward_name` varchar(100) NOT NULL,
+  PRIMARY KEY (`ward_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -818,4 +817,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-07  9:43:43
+-- Dump completed on 2022-07-08  1:03:21
