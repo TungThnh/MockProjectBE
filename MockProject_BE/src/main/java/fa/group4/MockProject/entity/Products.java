@@ -1,6 +1,6 @@
 package fa.group4.MockProject.entity;
 
-public class Products {
+public class products {
 	private String productID;
 	private String productName;
 	private float price;
@@ -8,7 +8,6 @@ public class Products {
 	private String categoryID;
 	private int productWanranty;
 	private String image;
-	private float interestRate;
-	private int excusive;
-	private String accessoriesIncluded;
+	private boolean status;
+	private int brandID;
 }
