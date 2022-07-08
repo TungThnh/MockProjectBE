@@ -17,7 +17,7 @@ public class Product {
 	private String productName;
 	
 	@Column(name = "price")
-	private Integer price;
+	private Float price;
 	
 	@Column(name = "manufacturer")
 	private String manufacturerID;
@@ -34,15 +34,15 @@ public class Product {
 	@Column(name = "status")
 	private Boolean status;
 	
-	@Column(name = "Brand")
-	private Boolean brand;
+	@Column(name = "brand_id")
+	private Integer brand;
 	
 	public Product() {
 
 	}
 
-	public Product(String productID, String productName, Integer price, String manufacturerID, Integer categoryID,
-			Integer productWarranty, String imagelink, Boolean status, Boolean brand) {
+	public Product(String productID, String productName, Float price, String manufacturerID, Integer categoryID,
+			Integer productWarranty, String imagelink, Boolean status, Integer brand) {
 		this.productID = productID;
 		this.productName = productName;
 		this.price = price;
@@ -70,11 +70,11 @@ public class Product {
 		this.productName = productName;
 	}
 
-	public Integer getPrice() {
+	public Float getPrice() {
 		return price;
 	}
 
-	public void setPrice(Integer price) {
+	public void setPrice(Float price) {
 		this.price = price;
 	}
 
@@ -118,13 +118,12 @@ public class Product {
 		this.status = status;
 	}
 
-	public Boolean getBrand() {
+	public Integer getBrand() {
 		return brand;
 	}
 
-	public void setBrand(Boolean brand) {
+	public void setBrand(Integer brand) {
 		this.brand = brand;
 	}
-	
-	
+
 }

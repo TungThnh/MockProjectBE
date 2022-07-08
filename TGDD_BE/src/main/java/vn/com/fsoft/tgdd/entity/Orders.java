@@ -12,23 +12,35 @@ import javax.persistence.Table;
 public class Orders {
 	
 	@Id
+	@Column(name = "order_id")
+	private Integer orderID;
+	
 	@Column(name = "customer_id")
 	private Integer customerID;
 	
 	@Column(name = "time_created")
 	private Date timeCreated;
 	
-	@Column(name = "bill_id")
-	private Integer billID;
+	@Column(name = "total_price")
+	private Float totalPrice;
 
 	public Orders() {
 
 	}
 
-	public Orders(Integer customerID, Date timeCreated, Integer billID) {
+	public Orders(Integer orderID, Integer customerID, Date timeCreated, Float totalPrice) {
+		this.orderID = orderID;
 		this.customerID = customerID;
 		this.timeCreated = timeCreated;
-		this.billID = billID;
+		this.totalPrice = totalPrice;
+	}
+
+	public Integer getOrderID() {
+		return orderID;
+	}
+
+	public void setOrderID(Integer orderID) {
+		this.orderID = orderID;
 	}
 
 	public Integer getCustomerID() {
@@ -47,13 +59,12 @@ public class Orders {
 		this.timeCreated = timeCreated;
 	}
 
-	public Integer getBillID() {
-		return billID;
+	public Float getTotalPrice() {
+		return totalPrice;
 	}
 
-	public void setBillID(Integer billID) {
-		this.billID = billID;
+	public void setTotalPrice(Float totalPrice) {
+		this.totalPrice = totalPrice;
 	}
-	
-	
+
 }

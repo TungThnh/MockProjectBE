@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,13 +15,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import vn.com.fsoft.tgdd.entity.Category;
 import vn.com.fsoft.tgdd.entity.Product;
 import vn.com.fsoft.tgdd.service.CategoryService;
 import vn.com.fsoft.tgdd.service.ProductService;
 
-@Controller
+@RestController
 @RequestMapping("product")
 public class ProductController {
 
@@ -31,13 +33,22 @@ public class ProductController {
 	CategoryService cateService;;
 ////////////////////////////////////Product ////////////////////////////////////////
 
+//	@GetMapping("/get-all-product")
+//	public String getAllistProduct(Model model) {
+//		List<Product> listProduct = proService.findAll();
+//		decodeMethod(listProduct);
+//		model.addAttribute("product", listProduct);
+//		return "product";
+//	}
+	
 	@GetMapping("/get-all-product")
-	public String getAllistProduct(Model model) {
+	public ResponseEntity<?> getAllistProduct(Model model) {
 		List<Product> listProduct = proService.findAll();
-		decodeMethod(listProduct);
+//		decodeMethod(listProduct);
 		model.addAttribute("product", listProduct);
-		return "product";
+		return ResponseEntity.ok(listProduct);
 	}
+	
 /////////// Add product /////////
 
 	@GetMapping("/add-product-page")
@@ -83,7 +94,6 @@ public class ProductController {
 		Product pro = proService.findByID(id);
 		pro.setStatus(false);
 		proService.saveProduct(pro);
-
 		List<Product> ListProduct= proService.findAll();
 		model.addAttribute("Product", ListProduct);
 		return "product";

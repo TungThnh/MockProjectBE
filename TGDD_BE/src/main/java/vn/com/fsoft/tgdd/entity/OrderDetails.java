@@ -10,47 +10,41 @@ import javax.persistence.Table;
 public class OrderDetails {
 	
 	@Id
-	@Column(name = "bill_id")
-	private Integer billId;
-	
-	@Column(name = "quantity")
-	private Integer quantity;
+	@Column(name = "order_details_id")
+	private Integer orderDetailsId;
 	
 	@Column(name = "product_id")
 	private String productId;
 	
+	@Column(name = "quantity")
+	private Integer quantity;
+	
 	@Column(name = "promo_code_id")
 	private Integer promoCodeId;
 	
-	@Column(name = "customer_id")
-	private Integer customerId;
+	@Column(name = "order_id")
+	private Integer orderId;
 
 	public OrderDetails() {
 
 	}
 
-	public OrderDetails(Integer billId, Integer quantity, String productId, Integer promoCodeId, Integer customerId) {
-		this.billId = billId;
-		this.quantity = quantity;
+	public OrderDetails(Integer orderDetailsId, String productId, Integer quantity, Integer promoCodeId,
+			Integer orderId) {
+		super();
+		this.orderDetailsId = orderDetailsId;
 		this.productId = productId;
-		this.promoCodeId = promoCodeId;
-		this.customerId = customerId;
-	}
-
-	public Integer getBillId() {
-		return billId;
-	}
-
-	public void setBillId(Integer billId) {
-		this.billId = billId;
-	}
-
-	public Integer getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
+		this.promoCodeId = promoCodeId;
+		this.orderId = orderId;
+	}
+
+	public Integer getOrderDetailsId() {
+		return orderDetailsId;
+	}
+
+	public void setOrderDetailsId(Integer orderDetailsId) {
+		this.orderDetailsId = orderDetailsId;
 	}
 
 	public String getProductId() {
@@ -61,6 +55,14 @@ public class OrderDetails {
 		this.productId = productId;
 	}
 
+	public Integer getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
+	}
+
 	public Integer getPromoCodeId() {
 		return promoCodeId;
 	}
@@ -69,16 +71,13 @@ public class OrderDetails {
 		this.promoCodeId = promoCodeId;
 	}
 
-	public Integer getCustomerId() {
-		return customerId;
+	public Integer getOrderId() {
+		return orderId;
 	}
 
-	public void setCustomerId(Integer customerId) {
-		this.customerId = customerId;
+	public void setOrderId(Integer orderId) {
+		this.orderId = orderId;
 	}
-	
-	
-	
-	
 
+	
 }
