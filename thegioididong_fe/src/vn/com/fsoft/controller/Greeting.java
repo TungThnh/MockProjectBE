@@ -6,6 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 
+import vn.com.fsoft.entity.Product;
+
 @Controller
 public class Greeting {
     
@@ -23,8 +25,8 @@ public class Greeting {
     public String LoadAddProductPage(Model model) {
         RestTemplate restTemplate = new RestTemplate();
         String fooResourceUrl = "http://localhost:8070/testa";
-        ResponseEntity<String> response
-          = restTemplate.getForEntity(fooResourceUrl, String.class);
+        ResponseEntity<Product> response
+          = restTemplate.getForEntity(fooResourceUrl, Product.class);
         model.addAttribute("productDTO", response.getBody());
         return "test";
     }
