@@ -225,18 +225,18 @@ DROP TABLE IF EXISTS `order_detail`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `order_detail` (
-  `bill_id` int NOT NULL,
+  `order_detail_id` int NOT NULL,
+  `order_id` int NOT NULL,
   `quantity` int NOT NULL,
   `product_id` varchar(50) NOT NULL,
   `promo_code_id` int NOT NULL,
-  `customer_id` int NOT NULL,
-  PRIMARY KEY (`bill_id`),
-  KEY `order_detail_ibfk_2` (`promo_code_id`),
-  KEY `order_detail_ibfk_3` (`customer_id`),
-  KEY `fkOrder_detail_idx` (`product_id`),
-  CONSTRAINT `fkOrder_detail` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`),
-  CONSTRAINT `order_detail_ibfk_2` FOREIGN KEY (`promo_code_id`) REFERENCES `promo_code` (`prom_code_id`),
-  CONSTRAINT `order_detail_ibfk_3` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`)
+  PRIMARY KEY (`order_detail_id`),
+  KEY `fkOrder_id_idx` (`order_id`),
+  KEY `fkProduct_id_idx` (`product_id`),
+  KEY `fkPromo_code_idx` (`promo_code_id`),
+  CONSTRAINT `fkOrder_id` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`),
+  CONSTRAINT `fkProduct_id` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`),
+  CONSTRAINT `fkPromo_code` FOREIGN KEY (`promo_code_id`) REFERENCES `promo_code` (`prom_code_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -257,11 +257,13 @@ DROP TABLE IF EXISTS `orders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `orders` (
+  `order_id` int NOT NULL AUTO_INCREMENT,
   `customer_id` int NOT NULL,
   `time_created` date NOT NULL,
-  `bill_id` int NOT NULL,
-  KEY `orders_ibfk_1` (`bill_id`),
-  CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`bill_id`) REFERENCES `order_detail` (`bill_id`)
+  `total_price` float NOT NULL,
+  PRIMARY KEY (`order_id`),
+  KEY `fkCustomer_id_idx` (`customer_id`),
+  CONSTRAINT `fkCustomer_id` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -307,7 +309,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES ('/asus-gaming-rog-flow-z13','Asus Gaming ROG Flow Z13 GZ301Z i7 12700H/16GB/512GB/4GB RTX3050/120Hz/Touch/Pen/Túi/Win11 (LD110W)',48990000,'Đài Loan',1,2,'https://cdn.tgdd.vn/Products/Images/44/274539/asus-gaming-rog-flow-z13-gz301z-i7-ld110w-160322-120057-600x600.jpg',1,4),('/dell-gaming-alienware-m15','Dell Gaming Alienware m15 R6 i7 11800H/32GB/1TB SSD/8GB RTX3070/240Hz/OfficeHS/Win11 (70272633)',61490000,'Hoa Kỳ',1,2,'https://cdn.tgdd.vn/Products/Images/44/271090/dell-gaming-alienware-m15-r6-i7-11800h-32gb-1tb-ssd-8gb-600x600.jpg',1,8),('/elio-el075-01-el075-02','Đồng hồ đôi Elio EL075-01/EL075-02',924000,'Việt Nam',7,0,'https://cdn.tgdd.vn/Products/Images/7264/234135/elio-el075-01-el075-02-nam-nu-600x600.jpg',1,15),('/hp-elitebook-x360','HP EliteBook X360 1040 G8 i7 1165G7/16GB/512GB/Touch/Pen/Win10 Pro (3G1H4PA)',42090000,'Mỹ',1,1,'https://cdn.tgdd.vn/Products/Images/44/242415/hp-elitebook-x360-1040-g8-i7-3g1h4pa-18-600x600.jpg',1,6),('/samsung-galaxy-tab-s8-ultra','Samsung Galaxy Tab S8 Ultra',30990000,'Hàn Quốc',6,0,'https://cdn.tgdd.vn/Products/Images/522/247513/samsung-galaxy-tab-s8-ultra-1-600x600.jpg',1,2),('acer-nitro-5','Acer Nitro 5 AN515 45 R9SC R7 5800H/8GB/512GB/8GB RTX3070/144Hz/Win10 (NH.QBRSV.001) ',39990000,'Đài Loan',1,2,'https://cdn.tgdd.vn/Products/Images/44/265461/acer-nitro-5-an515-45-r9sc-r7-5800h-8gb-512gb-600x600.jpg',1,7),('intel-nuc-m15','Intel NUC M15 Kit i7 1165G7/16GB/512GB/Touch/Win10 (BBC710BCUXBC1)',27990000,'Hoa kỳ',1,1,'https://cdn.tgdd.vn/Products/Images/44/265022/intel-nuc-m15-i7-bbc710bcuxbc1-thumb-1-600x600.jpg',1,5),('ipad-pro-m1-2021','iPad Pro M1 12.9 inch WiFi 128GB (2021) ',25490000,'Mỹ',6,1,'https://cdn.tgdd.vn/Products/Images/522/237699/ipad-pro-m1-129-inch-wifi-gray-600x600.jpg',1,1),('lg-gram-16','LG Gram 16 2021 i7 1165G7/16GB/512GB/Win10 (16Z90P-G.AH75A5)',40890000,'Hàn Quốc',1,1,'https://cdn.tgdd.vn/Products/Images/44/238133/lg-gram-16-i7-16z90pgah75a5-600x600.jpg',1,10),('macbook-pro-14-m1-max-2021','MacBook Pro 14 M1 Max 2021 10-core CPU/32GB/512GB/24-core GPU (Z15G)',72900000,'Mỹ',1,3,'https://cdn.tgdd.vn/Products/Images/44/263914/macbook-pro-14-m1-max-2021-10-core-cpu-600x600.jpg',1,1),('msi-creator-z16p',' MSI Creator Z16P B12UGST i7 12700H/32GB/2TB SSD/8GB RTX3070Ti Max-Q/165Hz/Túi/Chuột/Win11 (050VN) ',78990000,'Đài Loan',1,1,'https://cdn.tgdd.vn/Products/Images/44/274777/msi-creator-z16p-b12ugst-i7-050vn-200322-110128-600x600.jpg',1,9),('nokia-g21','Nokia G21',4290000,'Phần Lan',2,1,'https://cdn.tgdd.vn/Products/Images/42/270207/nokia-g21-xanh-thumb-600x600.jpg',1,14),('oppo-find-x5-pro','OPPO Find X5 Pro 5G',32990000,'Trung Quốc',2,1,'https://cdn.tgdd.vn/Products/Images/42/250622/oppo-find-x5-pro-den-thumb-600x600.jpg',1,11),('realme-9-pro','Realme 9 Pro 5G',7990000,'Trung Quốc',2,1,'https://cdn.tgdd.vn/Products/Images/42/250190/realme-9-pro-thumb-600x600.jpg',1,13),('samsung-galaxy-a52s-5g','Samsung Galaxy A52s 5G 128GB',10990000,'Hàn Quốc',2,2,'RTpcRWNsaXBzZTJcVEdERF9CQVx0YXJnZXRcY2xhc3Nlc1xzdGF0aWNcaW1hZ2VcdGVzdC5wbmc=',1,2),('vivo-v23e','Vivo V23e',8490000,'Trung Quốc',2,1,'https://cdn.tgdd.vn/Products/Images/42/245607/Vivo-V23e-1-2-600x600.jpg',1,12),('xiaomi-mi-12','Xiaomi 12',19990000,'Trung Quốc',2,2,'https://cdn.tgdd.vn/Products/Images/42/234621/Xiaomi-12-xam-thumb-mau-600x600.jpg',1,3);
+INSERT INTO `product` VALUES ('acer-nitro-5','Acer Nitro 5 AN515 45 R9SC R7 5800H/8GB/512GB/8GB RTX3070/144Hz/Win10 (NH.QBRSV.001) ',39990000,'Đài Loan',1,2,'https://cdn.tgdd.vn/Products/Images/44/265461/acer-nitro-5-an515-45-r9sc-r7-5800h-8gb-512gb-600x600.jpg',1,7),('asus-gaming-rog-flow-z13','Asus Gaming ROG Flow Z13 GZ301Z i7 12700H/16GB/512GB/4GB RTX3050/120Hz/Touch/Pen/Túi/Win11 (LD110W)',48990000,'Đài Loan',1,2,'https://cdn.tgdd.vn/Products/Images/44/274539/asus-gaming-rog-flow-z13-gz301z-i7-ld110w-160322-120057-600x600.jpg',1,4),('dell-gaming-alienware-m15','Dell Gaming Alienware m15 R6 i7 11800H/32GB/1TB SSD/8GB RTX3070/240Hz/OfficeHS/Win11 (70272633)',61490000,'Hoa Kỳ',1,2,'https://cdn.tgdd.vn/Products/Images/44/271090/dell-gaming-alienware-m15-r6-i7-11800h-32gb-1tb-ssd-8gb-600x600.jpg',1,8),('elio-el075-01-el075-02','Đồng hồ đôi Elio EL075-01/EL075-02',924000,'Việt Nam',7,0,'https://cdn.tgdd.vn/Products/Images/7264/234135/elio-el075-01-el075-02-nam-nu-600x600.jpg',1,15),('hp-elitebook-x360','HP EliteBook X360 1040 G8 i7 1165G7/16GB/512GB/Touch/Pen/Win10 Pro (3G1H4PA)',42090000,'Mỹ',1,1,'https://cdn.tgdd.vn/Products/Images/44/242415/hp-elitebook-x360-1040-g8-i7-3g1h4pa-18-600x600.jpg',1,6),('intel-nuc-m15','Intel NUC M15 Kit i7 1165G7/16GB/512GB/Touch/Win10 (BBC710BCUXBC1)',27990000,'Hoa kỳ',1,1,'https://cdn.tgdd.vn/Products/Images/44/265022/intel-nuc-m15-i7-bbc710bcuxbc1-thumb-1-600x600.jpg',1,5),('ipad-pro-m1-2021','iPad Pro M1 12.9 inch WiFi 128GB (2021) ',25490000,'Mỹ',6,1,'https://cdn.tgdd.vn/Products/Images/522/237699/ipad-pro-m1-129-inch-wifi-gray-600x600.jpg',1,1),('lg-gram-16','LG Gram 16 2021 i7 1165G7/16GB/512GB/Win10 (16Z90P-G.AH75A5)',40890000,'Hàn Quốc',1,1,'https://cdn.tgdd.vn/Products/Images/44/238133/lg-gram-16-i7-16z90pgah75a5-600x600.jpg',1,10),('macbook-pro-14-m1-max-2021','MacBook Pro 14 M1 Max 2021 10-core CPU/32GB/512GB/24-core GPU (Z15G)',72900000,'Mỹ',1,3,'https://cdn.tgdd.vn/Products/Images/44/263914/macbook-pro-14-m1-max-2021-10-core-cpu-600x600.jpg',1,1),('msi-creator-z16p',' MSI Creator Z16P B12UGST i7 12700H/32GB/2TB SSD/8GB RTX3070Ti Max-Q/165Hz/Túi/Chuột/Win11 (050VN) ',78990000,'Đài Loan',1,1,'https://cdn.tgdd.vn/Products/Images/44/274777/msi-creator-z16p-b12ugst-i7-050vn-200322-110128-600x600.jpg',1,9),('nokia-g21','Nokia G21',4290000,'Phần Lan',2,1,'https://cdn.tgdd.vn/Products/Images/42/270207/nokia-g21-xanh-thumb-600x600.jpg',1,14),('oppo-find-x5-pro','OPPO Find X5 Pro 5G',32990000,'Trung Quốc',2,1,'https://cdn.tgdd.vn/Products/Images/42/250622/oppo-find-x5-pro-den-thumb-600x600.jpg',1,11),('realme-9-pro','Realme 9 Pro 5G',7990000,'Trung Quốc',2,1,'https://cdn.tgdd.vn/Products/Images/42/250190/realme-9-pro-thumb-600x600.jpg',1,13),('samsung-galaxy-a52s-5g','Samsung Galaxy A52s 5G 128GB',10990000,'Hàn Quốc',2,2,'RTpcRWNsaXBzZTJcVEdERF9CQVx0YXJnZXRcY2xhc3Nlc1xzdGF0aWNcaW1hZ2VcdGVzdC5wbmc=',1,2),('samsung-galaxy-tab-s8-ultra','Samsung Galaxy Tab S8 Ultra',30990000,'Hàn Quốc',6,0,'https://cdn.tgdd.vn/Products/Images/522/247513/samsung-galaxy-tab-s8-ultra-1-600x600.jpg',1,2),('vivo-v23e','Vivo V23e',8490000,'Trung Quốc',2,1,'https://cdn.tgdd.vn/Products/Images/42/245607/Vivo-V23e-1-2-600x600.jpg',1,12),('xiaomi-mi-12','Xiaomi 12',19990000,'Trung Quốc',2,2,'https://cdn.tgdd.vn/Products/Images/42/234621/Xiaomi-12-xam-thumb-mau-600x600.jpg',1,3);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -817,4 +819,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-08  1:03:21
+-- Dump completed on 2022-07-08 13:49:50
