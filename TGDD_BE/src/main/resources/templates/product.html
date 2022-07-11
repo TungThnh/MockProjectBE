@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <style>
 table, th {
 	border: 1px solid black;
@@ -9,45 +9,47 @@ td {
 	border: 1px solid black;
 	text-align: center;
 }
+
 </style>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
 </head>
 <body>
-	<table style="width: 50%; margin: auto">
-		<tr>
-			<th>ID</th>
-			<th>Name</th>
-			<th>price</th>
-			<th>manufacturer</th>
-			<th>category</th>
-			<th>Product warranty</th>
-			<th>Image</th>
-			<th>Interes Rate</th>
-			<th>Excusive</th>
-			<th>accessories Included</th>
-			<th>Activation </th>
-			<th>Edit</th>
-			<th>Delete</th>
-		</tr>
-		<tr th:each="LIST_PRODUCT : ${product}">
-			<td th:text="${LIST_PRODUCT.productID}"></td>
-			<td th:text="${LIST_PRODUCT.productName}"></td>
-			<td th:text="${LIST_PRODUCT.price}"></td>
-			<td th:text="${LIST_PRODUCT.manufacturerID}"></td>
-			<td th:text="${LIST_PRODUCT.categoryID}"></td>
-			<td th:text="${LIST_PRODUCT.productWarranty}"></td>
-			<td width="100">
-				<img alt="" th:src="${LIST_PRODUCT.imagelink}" width="80" height="70">
-			</td>
-			<td th:text="${LIST_PRODUCT.interesRate}"></td>
-			<td th:text="${LIST_PRODUCT.excusive}"></td>
-			<td th:text="${LIST_PRODUCT.accessoriesIncluded}"></td>
-			<td><input type="checkbox" name="active" th:checked="${LIST_PRODUCT.status}" disabled="true"/></td>
-			<td><a th:href="@{/editProductPage/{productID}(productID=${LIST_PRODUCT.productID})}">Edit</a></td>
-			<td><a th:href="@{/deleteProduct/{productID}(productID=${LIST_PRODUCT.productID})}">Delete</a></td>
-		</tr>
-	</table>
+<h1><i><b>Thegioididong.com</b></i></h1>
+<form th:action="@{/product/get-all-product}" method="post">
+    <input type="text" name="keyword" th:value="${keyword}" placeholder="Bạn tìm gì......">
+    <input type="submit" value="Search">
+</form>
+<table style="width: 50%; margin: auto">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>price</th>
+        <th>manufacturer</th>
+        <th>category</th>
+        <th>Product warranty</th>
+        <th>Image</th>
+        <th>Brand</th>
+        <th>Status</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <tr th:each="LIST_PRODUCT : ${product}">
+        <td th:text="${LIST_PRODUCT.productID}"></td>
+        <td th:text="${LIST_PRODUCT.productName}"></td>
+        <td th:text="${LIST_PRODUCT.price}"></td>
+        <td th:text="${LIST_PRODUCT.manufacturerID}"></td>
+        <td th:text="${LIST_PRODUCT.categoryID}"></td>
+        <td th:text="${LIST_PRODUCT.productWarranty}"></td>
+        <td width="100">
+            <img alt="" th:src="${LIST_PRODUCT.imagelink}" width="80" height="70">
+        </td>
+        <td th:text="${LIST_PRODUCT.brand}"></td>
+        <td><input type="checkbox" name="active" th:checked="${LIST_PRODUCT.status}" disabled="true"/></td>
+        <td><a th:href="@{/editProductPage/{productID}(productID=${LIST_PRODUCT.productID})}">Edit</a></td>
+        <td><a th:href="@{/deleteProduct/{productID}(productID=${LIST_PRODUCT.productID})}">Delete</a></td>
+    </tr>
+</table>
 </body>
 </html>

@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,7 +23,7 @@ import vn.com.fsoft.tgdd.entity.Product;
 import vn.com.fsoft.tgdd.service.CategoryService;
 import vn.com.fsoft.tgdd.service.ProductService;
 
-@RestController
+@Controller
 @RequestMapping("product")
 public class ProductController {
 
@@ -36,18 +37,26 @@ public class ProductController {
 //	@GetMapping("/get-all-product")
 //	public String getAllistProduct(Model model) {
 //		List<Product> listProduct = proService.findAll();
-//		decodeMethod(listProduct);
+//		//decodeMethod(listProduct);
 //		model.addAttribute("product", listProduct);
 //		return "product";
 //	}
-	
-	@GetMapping("/get-all-product")
-	public ResponseEntity<?> getAllistProduct(Model model) {
-		List<Product> listProduct = proService.findAll();
-//		decodeMethod(listProduct);
-		model.addAttribute("product", listProduct);
-		return ResponseEntity.ok(listProduct);
+
+	@RequestMapping("/get-all-product")
+	public String getAllProduct(Model model, @Param("keyword") String keyword) {
+		List<Product> Lproduct = proService.listAll(keyword);
+		model.addAttribute("product", Lproduct);
+		model.addAttribute("keyword", keyword);
+		return "product";
 	}
+	
+//	@GetMapping("/get-all-product")
+//	public ResponseEntity<?> getAllistProduct(Model model) {
+//		List<Product> listProduct = proService.findAll();
+////		decodeMethod(listProduct);
+//		model.addAttribute("product", listProduct);
+//		return ResponseEntity.ok(listProduct);
+//	}
 	
 /////////// Add product /////////
 
@@ -99,6 +108,9 @@ public class ProductController {
 		return "product";
 
 	}
+
+
+
 
 //Decode image//
 

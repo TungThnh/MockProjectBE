@@ -48,8 +48,16 @@ public class ProductServiceImpl implements ProductService {
 //		decodeMethod(listProduct);
 		return listProduct;
 	}
-	
-	
+
+	@Override
+	public List<Product> listAll(String keyword) {
+		List<Product> listProduct = productRepo.findProductByKeyword(keyword);
+//		decodeMethod(listProduct);
+		if(keyword != null) {
+			return listProduct;
+		}
+		return productRepo.findAll();
+	}
 
 	// Decode image//
 
