@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thế giới di động</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./vendors/js/jssor.slider-28.1.0.min.js" type="text/javascript"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,regular,italic,700,700italic&subset=latin-ext,greek-ext,cyrillic-ext,greek,vietnamese,latin,cyrillic" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./vendors/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/cart.css">
+    <link rel="stylesheet" href="./assets/css/product_details.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/css/carousel_pddt.css">
+    <script src="./assets/js/carousel_pddt.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/cart.js"></script>
+</head>
+
+<body>
+    <div class="main">
+        <!-- start header--- -->
+        <div class="header">
+            <!-- start-navbar-top--- -->
+            <div class="header_navbar-top">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active header_slide_1">
+                            <div class="grid wide">
+                                <img src="./assets/images/header_navbar_top_1.png" width="100%" alt="Photos">
+                            </div>
+                        </div>
+                        <div class="carousel-item header_slide_2">
+                            <div class="grid wide">
+                                <img src="./assets/images/2011-1200-44-1200x44.png" width="100%" alt="Photos">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid wide">
+                        <a class="carousel-control-prev header_slide_control_1" href="#myCarousel" data-slide="prev">
+                            <i class="fas fa-chevron-left"></i>
+                        </a>
+                        <a class="carousel-control-next header_slide_control_2" href="#myCarousel" data-slide="next">
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- end--navbar-top-- -->
+            <!-- start-header-with-search--------->
+            <div class="header_with_search">
+                <div class="grid wide ">
+                    <div class="header_with_search-main">
+                        <div class="header_search_left">
+                            <a href="index.html" class="header_search-logo">
+                                <img class="hidden_on_mobile" src="./assets/images/logo.jpg" alt="logo">
+                                <img class="show_on_mobile logo_on_mobile" src="./assets/images/logo_mobile.png"
+                                    alt="logo">
+                            </a>
+                            <label for="header_adress_checkbox" class=" header_search-adress" id="header_search-adress">
+                                <span class="hidden_on_mobile header_search-adress-title">Xem giá, khuyến mãi tại</span>
+                                <div class="header_search-adress_body">
+                                    <span class="header_adress_body-title">
+                                        <h3> <i class="adress_icon_location fas fa-map-marker-alt"></i>
+                                            P.Nguyễn Thái Hoàng hà nội</h3>
+                                    </span>
+                                    <i class="hidden_on_mobile fas fa-sort-down"></i>
+                                </div>
+                            </label>
+                            <input type="checkbox" hidden id="header_adress_checkbox" class="header_adress_checkbox">
+                            <div class="screen_overlay">
+
+                            </div>
+                            <form action="#" class="header_adress_form">
+                                <div class="header_adress_form-header">
+                                    <h3>Chọn địa chỉ nhận hàng</h3>
+                                    <label for="header_adress_checkbox" class="header_adress_checkbox">
+                                        <i class="fas fa-times"></i>
+                                        <span>Đóng</span>
+                                    </label>
+                                </div>
+                                <div class="header_adress_form-body">
+                                    <input type="checkbox" hidden id="checkbox_header_form_input_detal"
+                                        class="checkbox_header_form_input_detal">
+
+                                    <div class="header_adress_nodetail">
+                                        <label for="checkbox_header_province_body_input"
+                                            class="header_adress_body_input">
+                                            <span>Hồ Chí Minh</span>
+                                            <i class="fas fa-sort-down"></i>
+                                        </label>
+                                        <input type="checkbox" hidden id="checkbox_header_province_body_input"
+                                            class="checkbox_header_adress_body_input">
+                                        <span class="header_form_district">Quận: <span>1</span></span>
+                                        <span class="header_form_wards">Phường: <span>1</span></span>
+                                        <label for="checkbox_header_form_input_detal"
+                                            class="header_form_input_detal">Chọn địa chỉ khác</label>
+                                        <div class="header_adress_body_showprovince">
+                                            <div class="header_adress_body_showprovince_search">
+                                                <i class="fas fa-search"></i>
+                                                <input type="text" placeholder="Nhập để tìm kiếm">
+                                            </div>
+                                            <ul class="header_adress_body_showprovince_list">
+                                                <li class="header_adress_body_showprovince_link"><a href="#"><strong>Hà
+                                                            Nội</strong></a></li>
+                                                <li class="header_adress_body_showprovince_link"><a href="#">Hà Nội</a>
+                                                </li>
+                                                <li class="header_adress_body_showprovince_link"><a href="#">Hà Nội</a>
+                                                </li>
+                                                <li class="header_adress_body_showprovince_link"><a href="#">Hà Nội</a>
+                                                </li>
+                                                <li class="header_adress_body_showprovince_link"><a href="#">Hà Nội</a>
+                                                </li>
+                                                <li class="header_adress_body_showprovince_link"><a href="#">Hà Nội</a>
+                                                </li>
+                                                <li class="header_adress_body_showprovince_link"><a href="#">Hà Nội</a>
+                                                </li>
+                                                <li class="header_adress_body_showprovince_link"><a href="#">Hà Nội</a>
+                                                </li>
+                                                <li class="header_adress_body_showprovince_link"><a href="#">Hà Nội</a>
+                                                </li>
+                                                <li class="header_adress_body_showprovince_link"><a href="#">Hà Nội</a>
+                                                </li>
+                                                <li class="header_adress_body_showprovince_link"><a href="#">Hà Nội</a>
+                                                </li>
+                                                <li class="header_adress_body_showprovince_link"><a href="#">Hà Nội</a>
+                                                </li>
+                                                <li class="header_adress_body_showprovince_link"><a href="#">Hà Nội</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="header_adress_detail">
+                                        <h4 class="header_adress_detail_title"><strong>Chọn địa chỉ nhận hàng
+                                            </strong>để biết chính xác thời gian giao</h4>
+                                        <label for="checkbox_header_adress_detail_input_province"
+                                            class="header_adress_detail_input_province">
+                                            <span>Hồ Chí Minh</span>
+                                            <i class="fas fa-sort-down"></i>
+                                        </label>
+                                        <input type="checkbox" hidden id="checkbox_header_adress_detail_input_province"
+                                            class="checkbox_header_adress_detail_input_province">
+                                        <div class="header_adress_detail_body_showprovince">
+                                            <div class="header_adress_detail_body_showprovince_search">
+                                                <i class="fas fa-search"></i>
+                                                <input type="text" placeholder="Nhập để tìm kiếm">
+                                            </div>
+                                            <ul class="header_adress_detail_body_showprovince_list">
+                                                <li class="header_adress_detail_body_showprovince_link"><a
+                                                        href="#"><strong>Hà Nội</strong></a></li>
+                                                <li class="header_adress_detail_body_showprovince_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showprovince_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showprovince_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showprovince_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showprovince_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showprovince_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showprovince_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showprovince_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showprovince_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showprovince_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showprovince_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showprovince_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                            </ul>
+                                        </div>
+                                        <label for="checkbox_header_adress_detail_input_district"
+                                            class="header_adress_detail_input_district">
+                                            <span>Quận 1</span>
+                                            <i class="fas fa-sort-down"></i>
+                                        </label>
+                                        <input type="checkbox" hidden id="checkbox_header_adress_detail_input_district"
+                                            class="checkbox_header_adress_detail_input_district">
+                                        <div class="header_adress_detail_body_showdistrict">
+                                            <div class="header_adress_detail_body_showdistrict_search">
+                                                <i class="fas fa-search"></i>
+                                                <input type="text" placeholder="Nhập để tìm kiếm">
+                                            </div>
+                                            <ul class="header_adress_detail_body_showdistrict_list">
+                                                <li class="header_adress_detail_body_showdistrict_link"><a
+                                                        href="#"><strong>Hà Nội</strong></a></li>
+                                                <li class="header_adress_detail_body_showdistrict_link"><a href="#">Quận
+                                                        1</a></li>
+                                                <li class="header_adress_detail_body_showdistrict_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showdistrict_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showdistrict_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showdistrict_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showdistrict_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showdistrict_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showdistrict_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showdistrict_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showdistrict_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showdistrict_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showdistrict_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                            </ul>
+                                        </div>
+                                        <label for="checkbox_header_adress_detail_input_ward"
+                                            class="header_adress_detail_input_ward">
+                                            <span>Phường Nguyễn Thái Bình</span>
+                                            <i class="fas fa-sort-down"></i>
+                                        </label>
+                                        <input type="checkbox" hidden id="checkbox_header_adress_detail_input_ward"
+                                            class="checkbox_header_adress_detail_input_ward">
+
+                                        <div class="header_adress_detail_body_showward">
+                                            <div class="header_adress_detail_body_showward_search">
+                                                <i class="fas fa-search"></i>
+                                                <input type="text" placeholder="Nhập để tìm kiếm">
+                                            </div>
+                                            <ul class="header_adress_detail_body_showward_list">
+                                                <li class="header_adress_detail_body_showward_link"><a
+                                                        href="#"><strong>Hà Nội</strong></a></li>
+                                                <li class="header_adress_detail_body_showward_link"><a href="#">Phường
+                                                        Nguyễn Thái Bình</a></li>
+                                                <li class="header_adress_detail_body_showward_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showward_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showward_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showward_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showward_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showward_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showward_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showward_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showward_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showward_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                                <li class="header_adress_detail_body_showward_link"><a href="#">Hà
+                                                        Nội</a></li>
+                                            </ul>
+                                        </div>
+                                        <input type="text" class="header_adress_detail_input_apartment_number"
+                                            placeholder="Nhập số nhà, tên đường (Không bắt buộc)">
+                                    </div>
+                                    <button class="header_form_confilm">
+                                        Xác nhận
+                                    </button>
+                                </div>
+                            </form>
+
+                            <form action="" class="header_search">
+                                <input class="show_on_mobile" onclick="search_on_mobile()" type="text"
+                                    placeholder="Bạn tìm gì...">
+                                <input class="hidden_on_mobile" type="text" placeholder="Bạn tìm gì...">
+                                <button><i class="fas fa-search"></i></button>
+                            </form>
+
+                            <a href="cart.html" class="header_cart" id="header_cart">
+                                <i class="show_on_mobile fas fa-shopping-cart"></i>
+                                <span class="number">1</span>
+                                <span class="hidden_on_mobile">Giỏ hàng</span>
+                                <div class="header_cart-overlay"></div>
+                            </a>
+                            <a href="#" class=" header_cart-history" id="header_cart-history">
+                                Lịch sử đơn hàng
+                            </a>
+                            <label onclick="show_tab_on_mobile()" for="check_menu_list_on_mobile"
+                                class="menu_list_on_mobile" id="menu_list_on_mobile">
+                                <i class="fas fa-bars"></i>
+                                <Span>Menu</Span>
+                            </label>
+                            <input type="checkbox" hidden id="check_menu_list_on_mobile"
+                                class="check_menu_list_on_mobile">
+                            <div class="menu_option_list_on_mobile">
+                                <div class="menu_list_close">
+                                    <label for="check_menu_list_on_mobile" class="menu_list_close-icon">
+                                        <i class="fas fa-times"></i>
+                                        <span>Đóng</span>
+                                    </label>
+                                </div>
+                                <div class="menu_list_header">
+                                    <ul class="meunu_list_list">
+                                        <li class="menu_list_item">
+                                            <a href="#" class="menu_list_link">Đồng Hồ</a>
+                                        </li>
+                                        <li class="menu_list_item">
+                                            <a href="#" class="menu_list_link">Đồng Hồ</a>
+                                        </li>
+                                        <li class="menu_list_item">
+                                            <a href="#" class="menu_list_link">Đồng Hồ</a>
+                                        </li>
+                                        <li class="menu_list_item">
+                                            <a href="#" class="menu_list_link">Đồng Hồ</a>
+                                        </li>
+                                        <li class="menu_list_item">
+                                            <a href="#" class="menu_list_link">Đồng Hồ</a>
+                                        </li>
+                                        <li class="menu_list_item">
+                                            <a href="#" class="menu_list_link">Đồng Hồ</a>
+                                        </li>
+                                        <li class="menu_list_item">
+                                            <a href="#" class="menu_list_link">Đồng Hồ</a>
+                                        </li>
+                                        <li class="menu_list_item">
+                                            <a href="#" class="menu_list_link">Đồng Hồ</a>
+                                        </li>
+                                        <li class="menu_list_item">
+                                            <a href="#" class="menu_list_link">Đồng Hồ</a>
+                                        </li>
+                                        <li class="menu_list_item">
+                                            <a href="#" class="menu_list_link">Đồng Hồ</a>
+                                        </li>
+                                        <li class="menu_list_item">
+                                            <a href="#" class="menu_list_link">Đồng Hồ</a>
+                                        </li>
+                                        <li class="menu_list_item">
+                                            <a href="#" class="menu_list_link">Đồng Hồ</a>
+                                        </li>
+                                        <li class="menu_list_item">
+                                            <a href="#" class="menu_list_link">Đồng Hồ</a>
+                                        </li>
+                                        <li class="menu_list_item">
+                                            <a href="#" class="menu_list_link">Đồng Hồ</a>
+                                        </li>
+                                        <li class="menu_list_item">
+                                            <a href="#" class="menu_list_link">Đồng Hồ</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="menu_list_body">
+                                    <ul class="menu_body_list">
+                                        <li class="menu_list_body_item">
+                                            <span><strong>Nhóm hàng mới</strong></span>
+                                        </li>
+                                        <li class="menu_list_body_item">
+                                            <a href="#" class="menu_list_body_link">Phụ kiện ô tô</a>
+                                        </li>
+                                        <li class="menu_list_body_item">
+                                            <a href="#" class="menu_list_body_link">Phụ kiện ô tô</a>
+                                        </li>
+                                        <li class="menu_list_body_item">
+                                            <a href="#" class="menu_list_body_link">Phụ kiện ô tô</a>
+                                        </li>
+                                        <li class="menu_list_body_item">
+                                            <a href="#" class="menu_list_body_link">Phụ kiện ô tô</a>
+                                        </li>
+                                        <li class="menu_list_body_item">
+                                            <span><strong>Nhóm hàng mới</strong></span>
+                                        </li>
+                                        <li class="menu_list_body_item">
+                                            <a href="#" class="menu_list_body_link">Phụ kiện ô tô</a>
+                                        </li>
+                                        <li class="menu_list_body_item">
+                                            <a href="#" class="menu_list_body_link">Phụ kiện ô tô</a>
+                                        </li>
+                                        <li class="menu_list_body_item">
+                                            <a href="#" class="menu_list_body_link">Phụ kiện ô tô</a>
+                                        </li>
+                                        <li class="menu_list_body_item">
+                                            <a href="#" class="menu_list_body_link">Phụ kiện ô tô</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden_on_mobile header_search_right">
+                            <a href="#" class="header_search_right-product">24h <br> Công nghệ</a>
+                            <a href="#" class="header_search_right-product"><br>Hỏi Đáp</a>
+                            <a href="#" class="header_search_right-product"><br>Game App</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end-header-with-search--------->
+            <!-- start-navbar-bottom----------------->
+            <div class="hidden_on_mobile header_navbar_bottom grid wide">
+                <ul class="header_navbar_list">
+                    <li class="header_navbar_item">
+                        <a href="#" class="header_navbar_link"><i class="fas fa-phone"></i> Điện thoại</a>
+                    </li>
+                    <li class="header_navbar_item">
+                        <a href="#" class="header_navbar_link"><i class="fas fa-laptop"></i> Laptop</a>
+                    </li>
+                    <li class="header_navbar_item">
+                        <a href="#" class="header_navbar_link"><i class="fas fa-tablet-alt"></i> Tablet</a>
+                    </li>
+                    <li class="header_navbar_item header_navbar_acctive">
+                        <a href="#" class="header_navbar_link"><i class="fas fa-headphones"></i> Phụ kiện <i
+                                class="fas fa-caret-down"></i></a>
+                        <div class="header_navbar_accessory">
+                            <div class="header_accessory-item-group">
+                                <h3>Phụ kiện di động</h3>
+                                <ul class="header_accessory_list">
+                                    <li class="header_accessory_item">
+                                        <a href="#" class="header_accessory_link">Pin sạc dự phòng</a>
+                                    </li>
+                                    <li class="header_accessory_item">
+                                        <a href="#" class="header_accessory_link">Cáp sạc</a>
+                                    </li>
+                                    <li class="header_accessory_item">
+                                        <a href="#" class="header_accessory_link">Màn hình</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="header_accessory-item-group">
+                                <h3>Phụ kiện di động</h3>
+                                <ul class="header_accessory_list">
+                                    <li class="header_accessory_item">
+                                        <a href="#" class="header_accessory_link">Pin sạc dự phòng</a>
+                                    </li>
+                                    <li class="header_accessory_item">
+                                        <a href="#" class="header_accessory_link">Cáp sạc</a>
+                                    </li>
+                                    <li class="header_accessory_item">
+                                        <a href="#" class="header_accessory_link">Màn hình</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="header_accessory-item-group">
+                                <h3>Phụ kiện di động</h3>
+                                <ul class="header_accessory_list">
+                                    <li class="header_accessory_item">
+                                        <a href="#" class="header_accessory_link">Pin sạc dự phòng</a>
+                                    </li>
+                                    <li class="header_accessory_item">
+                                        <a href="#" class="header_accessory_link">Cáp sạc</a>
+                                    </li>
+                                    <li class="header_accessory_item">
+                                        <a href="#" class="header_accessory_link">Màn hình</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="header_navbar_item">
+                        <a href="#" class="header_navbar_link"><i class="far fa-clock"></i> Đồng hồ thông minh</a>
+                    </li>
+                    <li class="header_navbar_item">
+                        <a href="#" class="header_navbar_link"><i class="far fa-clock"></i> Đồng hồ thông minh</a>
+                    </li>
+                    <li class="header_navbar_item header_navbar_item_PC">
+                        <a href="#" class="header_navbar_link"><i class="fas fa-desktop"></i> PC, Máy in <i
+                                class="fas fa-caret-down"></i>
+                            <i class="fas fa-caret-down"></i>
+                        </a>
+                        <div class="header_navbar_PC">
+                            <div class="header_accessory-item-group">
+                                <ul class="header_accessory_list">
+                                    <li class="header_accessory_item">
+                                        <a href="#" class="header_accessory_link">Pin sạc dự phòng</a>
+                                    </li>
+                                    <li class="header_accessory_item">
+                                        <a href="#" class="header_accessory_link">Cáp sạc</a>
+                                    </li>
+                                    <li class="header_accessory_item">
+                                        <a href="#" class="header_accessory_link">Màn hình</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="header_navbar_item">
+                        <a href="#" class="header_navbar_link"> Máy cũ giá rẻ</a>
+                    </li>
+                    <li class="header_navbar_item">
+                        <a href="#" class="header_navbar_link"> Sim, thẻ cào</a>
+                        <span class="item_sale">Giảm 5%</span>
+                    </li>
+                    <li class="header_navbar_item">
+                        <a href="#" class="header_navbar_link"> Trả góp, điện nước</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- end navbar bottom--------------- -->
+        </div>
+        <!-- start_content_cart -->
+        <div class="background_cart">
+            <div class="main_cart">
+                <div class="top_content">
+                    <a href="#" class="top_content_left"><i class="fas fa-chevron-left"></i> Mua thêm sản phẩm khác</a>
+                    <div class="top_content_right hidden_on_mobile">Giỏ hàng của anh</div>
+                </div>
+                <div class="main_content">
+                    <ul class="main_header_list">
+                        <li class="product_header_item">
+                            <div class="product_header_img">
+                                <a href="#">
+                                    <img src="./assets/images/cart_img.jpg" alt="Photos">
+                                </a>
+                                <button><i class="fas fa-times"></i> Xóa</button>
+                            </div>
+                            <div class="product_header_info">
+                                <a href="#" class="product_header_info_name">
+                                    Pin sạc dự phòng không dây Polymer 10.000 mAh Type C PD QC3.0 Xmobile PowerLite
+                                    P106WD Pin sạc dự phòng không dây Polymer 10.000 mAh Type
+                                </a>
+                                <div class="product_header_detail">
+                                    <ul class="product_header_detail_list" id="product_header_detail_list">
+                                        <li class="product_header_detail_item">
+                                            <span>Giảm thêm 15% khi mua cùng sản phẩm bất kỳ có giá cao hơn <a
+                                                    href="#">(Xem chi tiết)</a></span>
+                                        </li>
+                                        <li class="product_header_detail_item">
+                                            <span>Giảm thêm 15% khi mua cùng sản phẩm bất kỳ có giá cao hơn <a
+                                                    href="#">(Xem chi tiết)</a></span>
+                                        </li>
+                                        <li class="product_header_detail_item">
+                                            <span>Giảm thêm 15% khi mua cùng sản phẩm bất kỳ có giá cao hơn <a
+                                                    href="#">(Xem chi tiết)</a></span>
+                                        </li>
+                                    </ul>
+                                    <div id="show_detail_product_cart" onclick="show_detail_product_cart()"
+                                        class="show">3 khuyến mãi <i class="fas fa-caret-down"></i></div>
+                                    <div id="hidden_detail_product_cart" onclick="hidden_detail_product_cart()"
+                                        class="hidden">Thu gọn <i class="fas fa-caret-up"></i></div>
+                                </div>
+                                <span class="product_header_color">
+                                    Màu: Đen
+                                </span>
+                            </div>
+                            <div class="product_header_price">
+                                <span class="new_price">375.000đ</span>
+                                <span class="old_price"><strike>750.000đ</strike></span>
+                                <div class="product_header_choosenumber">
+                                    <div class="minus"><i class="fas fa-minus"></i></div>
+                                    <div class="number_product">1</div>
+                                    <div class="plus"><i class="fas fa-plus"></i></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="total-product_provisional">
+                            <span class="total-product-quantity">Tạm tính (1 sản phẩm): </span>
+                            <div class="temp-total-money">375.000đ</div>
+                        </li>
+                        <li class="information_customer">
+                            <form action="" class="was-validated">
+                                <div class="info_customer">
+                                    <h4>THÔNG TIN KHÁCH HÀNG</h4>
+                                    <div class="sex_customer">
+                                        <input type="radio" name="sex" id="man">
+                                        <label for="man">Anh</label>
+                                        <input type="radio" name="sex" id="women">
+                                        <label for="women">Chị</label>
+                                    </div>
+                                    <div class="fill_form">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="name" placeholder="Họ và tên"
+                                                name="name" required>
+                                            <div class="valid-feedback">Hoàn thành.</div>
+                                            <div class="invalid-feedback">Vui lòng nhập họ và tên.</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="numberphone"
+                                                placeholder="Số điện thoại" name="numberphone" required>
+                                            <div class="valid-feedback">Hoàn thành.</div>
+                                            <div class="invalid-feedback">Vui lòng nhập số điện thoại.</div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </form>
+                        </li>
+                        <li class="choosegetgoods">
+                            <h4>CHỌN CÁCH THỨC NHẬN HÀNG</h4>
+                            <form action="">
+                                <div class="click-choose">
+                                    <input onchange="choosegetgoods_tab_1()" type="radio" checked name="choose" id="choose-tab-1">
+                                    <label for="choose-tab-1">Giao tận nơi</label>
+                                    <input onchange="choosegetgoods_tab_2()" type="radio" name="choose" id="choose-tab-2">
+                                    <label for="choose-tab-2">Nhận tại siêu thị</label>
+                                </div>
+                                <input type="checkbox" hidden id="choose-tab-2_cb" class="choose-tab-2_cb">
+                                <div class="delivery_address">
+                                    <span class="delivery_address_notes" id="delivery_address_notes">Chọn địa chỉ để biết thời gian nhận hàng và phí vận chuyển (nếu có)</span>
+                                    <ul class="delivery_address_detail" id="delivery_address_detail">
+                                        <li>
+                                            <label for="checkbox_delivery_address_detail_input_province"
+                                                class="delivery_address_detail_input_province">
+                                                <span>Hồ Chí Minh</span>
+                                                <i class="fas fa-sort-down"></i>
+                                            </label>
+                                            <input type="checkbox" hidden name="" id="checkbox_delivery_address_detail_input_province" class="checkbox_delivery_address_detail_input_province">
+                                            <div class="delivery_address_detail_body_showprovince">
+                                                <div class="delivery_address_detail_body_showprovince_search">
+                                                    <i class="fas fa-search"></i>
+                                                    <input type="text" placeholder="Nhập để tìm kiếm">
+                                                </div>
+                                                <ul class="delivery_address_detail_body_showprovince_list">
+                                                    <li class="delivery_address_detail_body_showprovince_link"><a
+                                                            href="#"><strong>Hà Nội</strong></a></li>
+                                                    <li class="delivery_address_detail_body_showprovince_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showprovince_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showprovince_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showprovince_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showprovince_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showprovince_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showprovince_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showprovince_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showprovince_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showprovince_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showprovince_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showprovince_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <label for="checkbox_delivery_address_detail_input_district"
+                                                class="delivery_address_detail_input_district">
+                                                <span>Quận 1</span>
+                                                <i class="fas fa-sort-down"></i>
+                                            </label>
+                                            <input type="checkbox" hidden name="" id="checkbox_delivery_address_detail_input_district" class="checkbox_delivery_address_detail_input_district">
+                                            <div class="delivery_address_detail_body_showdistrict">
+                                                <div class="delivery_address_detail_body_showdistrict_search">
+                                                    <i class="fas fa-search"></i>
+                                                    <input type="text" placeholder="Nhập để tìm kiếm">
+                                                </div>
+                                                <ul class="delivery_address_detail_body_showdistrict_list">
+                                                    <li class="delivery_address_detail_body_showdistrict_link"><a
+                                                            href="#"><strong>Hà Nội 1</strong></a></li>
+                                                    <li class="delivery_address_detail_body_showdistrict_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showdistrict_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showdistrict_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showdistrict_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showdistrict_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showdistrict_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showdistrict_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showdistrict_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showdistrict_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showdistrict_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showdistrict_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showdistrict_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <label for="checkbox_delivery_address_detail_input_ward"
+                                                class="delivery_address_detail_input_ward">
+                                                <span>Hồ Chí Minh</span>
+                                                <i class="fas fa-sort-down"></i>
+                                            </label>
+                                            <input type="checkbox"hidden id="checkbox_delivery_address_detail_input_ward" class="checkbox_delivery_address_detail_input_ward">
+                                            <div class="delivery_address_detail_body_showward">
+                                                <div class="delivery_address_detail_body_showward_search">
+                                                    <i class="fas fa-search"></i>
+                                                    <input type="text" placeholder="Nhập để tìm kiếm">
+                                                </div>
+                                                <ul class="delivery_address_detail_body_showward_list">
+                                                    <li class="delivery_address_detail_body_showward_link"><a
+                                                            href="#"><strong>Hà Nội</strong></a></li>
+                                                    <li class="delivery_address_detail_body_showward_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showward_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showward_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showward_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showward_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showward_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showward_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showward_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showward_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showward_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showward_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                    <li class="delivery_address_detail_body_showward_link"><a href="#">Hà
+                                                            Nội</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <input type="text" class="delivery_address_detail_input_apartment_number"
+                                            placeholder="Nhập số nhà, tên đường "></li>
+                                    </ul>
+                                    <div class="delivery_address_detail_tab_2" id="delivery_address_detail_tab_2">
+                                        <ul class="delivery_address_detail_tab_2_list">
+                                            <li>
+                                                <input type="radio" id="link1" name="adress">
+                                                <label for="link1"> E6/8 Thới Hòa Xã Vĩnh Lộc A, Huyện Bình Chánh, TP. Hồ Chí Minh </label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="link2" name="adress">
+                                                <label for="link2"> E6/8 Thới Hòa Xã Vĩnh Lộc A, Huyện Bình Chánh, TP. Hồ Chí Minh </label>
+                                            </li>
+                                            <li>
+                                                <span class="show_all_delivery_address_detail_tab_2">Xem thêm 182 Địa chỉ</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="delivery_product">
+                                        <div class="delivery_product_header">
+                                            <span>Giao trước 12h ngày mai (17/11)</span>
+                                            <label for="checkbox_delivery_product_date_time">Chọn ngày giờ khác</label>
+                                        </div>
+                                        <input hidden type="checkbox" id="checkbox_delivery_product_date_time" class="checkbox_delivery_product_date_time">
+                                        <div class="delivery_product_select_date_time">
+                                            <select class="" name="" id="" >
+                                                <option value="Ngày mai 17/11" selected>Ngày mai 17/11</option>
+                                                <option value="Ngày kia 18/11">Ngày kia 18/11</option>
+                                                <option value="Ngày kia 19/11">Ngày kia 18/11</option>
+                                            </select>
+                                            <select class="" name="" id="" >
+                                                <option value="8h" selected>8h</option>
+                                                <option value="13h">13h</option>
+                                                <option value="19h">19h</option>
+                                            </select>
+                                        </div>
+                                        <div class="delivery_product_body">
+                                            <a href="">
+                                                <img src="./assets/images/cart_img.jpg" width="45px" height="45px" alt="Photos">
+                                            </a>
+                                            <div class="delivery_product_body_info">
+                                                <a href="">
+                                                    <h3>Pin sạc dự phòng không dây Polymer 10.000 mAh Type C PD QC3.0 Xmobile PowerLite P106WD</h3>
+                                                </a>
+                                                <span class="properties">
+                                                    <span>Màu: đen</span>
+                                                    <span>Số lượng: 1</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <span class="delivery_product_body_notes" id="delivery_product_body_notes">
+                                            Miễn phí giao hàng
+                                        </span>
+                                    </div>
+                                </div>
+                            </form>
+                        </li>
+                        <li>
+                            <div class="anotheroption">
+                                <form action="">
+                                    <ul class="anotheroption_list">
+                                        <li class="anotheroption_item">
+                                            <input type="text" placeholder="Yêu cầu khác (Không bắt buộc)" class="anotheroption_input">
+                                        </li>
+                                        <li class="anotheroption_item">
+                                            <input type="checkbox" class="anotheroption_checkbox" id="anotheroption_checkbox">
+                                            <label for="anotheroption_checkbox">Xuất hóa đơn công ty</label>
+
+                                        </li>
+                                    </ul>
+                                </form>
+                            </div>
+                        </li>
+                        <li>
+                            <form action="" class="finaltotal">
+                                <div class="total">
+                                    <span class="total_label">Tổng tiền</span>
+                                    <span class="total_price">375,000đ</span>
+                                </div>
+                                <button type="button" class="submitorder">Đặt hàng</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bottom_content">
+                    <p>Bằng cách đặt hàng, bạn đồng ý với Điều khoản sử dụng của Thegioididong</p>
+                </div>
+            </div>
+        </div>
+        <!-- end--header-- -->
+        <div class="content">
+            <div class="grid wide">
+
+            </div>
+            <!-- start_chatbox -->
+            <label for="checkbox_chatbox" for="chatbox" class="chatbox">
+                <i class="fas fa-comment-dots"></i>
+            </label>
+            <input id="checkbox_chatbox" hidden class="checkbox_chatbox" type="checkbox">
+            <div class="dialog_chat">
+                <div class="dialog_close">
+                    <label for="checkbox_chatbox" class="icon_chatbox_close">
+                        <i class="far fa-window-minimize"></i>
+                    </label>
+                </div>
+                <form action="" class="dialog_body was-validated">
+                    <div class="form-group form_body_dialogchat">
+                        <label for="">Quý khách muốn xưng hô là:</label>
+                        <select name="select" class="dialog_body_select">
+                            <option value=1>Anh</option>
+                            <option value=2>Chị</option>
+                        </select>
+                    </div>
+                    <div class="form-group form_body_dialogchat">
+                        <label for="uname">Tên của quý khách là:</label>
+                        <input type="text" class="form-control" id="uname" placeholder="Nhập tên của quý khách"
+                            name="uname" required>
+                        <div class="valid-feedback">Hoàn thành</div>
+                        <div class="invalid-feedback">Vui lòng nhập đủ thông tin.</div>
+                    </div>
+                    <div class="form-group form_body_dialogchat">
+                        <label for="numberphone">Số điện thoại của quý khách là:</label>
+                        <input type="numberphone" class="form-control" id="numberphone"
+                             placeholder="Nhập số điện thoại của quý khách:" name="numberphone" required>
+                        <div class="valid-feedback">Hoàn thành</div>
+                        <div class="invalid-feedback">Vui lòng nhập đủ thông tin.</div>
+                    </div>
+                    <div class="form-group form_body_dialogchat form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input form-check-input_body_dialogchat" type="checkbox"
+                                name="remember" required> Bằng việc chọn bắt đầu chát, quý khách đồng ý với các điều
+                            khoản của Thegioidiong.com.
+                            <div class="valid-feedback">Đồng ý</div>
+                            <div class="invalid-feedback">Đồng ý để bắt đầu chát</div>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Bắt đầu chát</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
