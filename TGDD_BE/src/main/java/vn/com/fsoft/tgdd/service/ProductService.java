@@ -17,4 +17,6 @@ public interface ProductService {
 	List<Product> findAll();
 
 	List<Product> listAll(String keyword); //search product
+	
+	List<Product> findAllByCategory(int cateID);
 }
