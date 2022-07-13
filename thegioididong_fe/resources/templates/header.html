@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+
+<!-- css -->
+<style>
+header.header, header.header *, .locationbox, .locationbox *, footer,
+	footer *, .feedback_global, .feedback_global * {
+	box-sizing: border-box;
+}
+
+
+* {
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+	transition: .2s;
+	color: #288ad6;
+}
+.iconnewglobal-logo {
+	background-position: 0 -176px;
+	width: 228px;
+	height: 40px;
+}
+
+[class^="iconnewglobal-"], [class*="iconnewglobal-"] {
+	background-image:
+		url(//cdn.tgdd.vn/mwgcart/mwg-site/ContentMwg/images/homev2/desk/iconnew.png);
+	background-repeat: no-repeat;
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	line-height: 30px;
+	vertical-align: middle;
+	background-size: 310px 257px;
+}
+
+.header__address {
+	color: #333;
+	font-size: 11px;
+	line-height: 15px;
+	margin-right: 21px;
+	width: 15%;
+	padding-left: 15px;
+	background: rgba(255, 172, 10, .6);
+	padding: 4px 6px 4px 10px;
+	border-radius: 4px;
+	position: relative;
+}
+
+.header__address span {
+	color: #333;
+	font-weight: bold;
+	width: max-content;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	overflow: hidden;
+	max-width: 117px;
+	text-transform: capitalize;
+	padding-right: 15px;
+}
+
+.header__address span::before {
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid #000;
+	content: '';
+	position: absolute;
+	top: 43%;
+	right: 7px;
+}
+
+.header__search {
+	position: relative;
+	width: 34%;
+	border-radius: 4px;
+	background-color: #fff;
+}
+
+.header__search input {
+	background-color: #fff;
+	border: none;
+	border-radius: 4px;
+	color: #999;
+	font-size: 12px;
+	line-height: 14px;
+	height: 40px;
+	padding: 8px 8px 8px 13px;
+	width: calc(100% - 35px);
+}
+
+input[type=text], input[type=tel], textarea {
+	-webkit-appearance: none;
+}
+
+input[type=text], input[type=tel], textarea {
+	-webkit-appearance: none;
+}
+
+body, input, button, option, textarea, label, select, legend, h1, h2, h3,
+	h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	font: 14px/18px Arial, Helvetica, sans-serif;
+	color: #333;
+	outline: none;
+}
+
+body, input, button, option, textarea, label, select, legend, h1, h2, h3,
+	h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	font: 14px/18px Arial, Helvetica, sans-serif;
+	color: #333;
+	outline: none;
+}
+
+body, input, button, option, textarea, label, legend, h1, h2, h3, h4, h5,
+	h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	font: 14px/18px Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans',
+		Freesans, sans-serif;
+	color: #333;
+	outline: none;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+user agent stylesheet
+input[type="text" i] {
+	padding: 1px 2px;
+}
+
+user agent stylesheet
+input {
+	writing-mode: horizontal-tb !important;
+	text-rendering: auto;
+	color: fieldtext;
+	letter-spacing: normal;
+	word-spacing: normal;
+	line-height: normal;
+	text-transform: none;
+	text-indent: 0px;
+	text-shadow: none;
+	display: inline-block;
+	text-align: start;
+	appearance: auto;
+	-webkit-rtl-ordering: logical;
+	cursor: text;
+	background-color: field;
+	margin: 0em;
+	padding: 1px 2px;
+	border-width: 2px;
+	border-style: inset;
+	border-color: -internal-light-dark(rgb(118, 118, 118),
+		rgb(133, 133, 133));
+	border-image: initial;
+}
+
+body, input, button, option, textarea, label, legend, h1, h2, h3, h4, h5,
+	h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	font: 14px/18px Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans',
+		Freesans, sans-serif;
+	color: #333;
+	outline: none;
+}
+
+.header__search button {
+	background-color: transparent;
+	border: none;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+body, input, button, option, textarea, label, select, legend, h1, h2, h3,
+	h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	font: 14px/18px Arial, Helvetica, sans-serif;
+	color: #333;
+	outline: none;
+}
+
+.icon-search {
+	background-position: -150px 0;
+	height: 17px;
+	width: 17px;
+}
+
+[class^="icon-"], [class*="icon-"] {
+	background-image:
+		url(//cdn.tgdd.vn/mwgcart/mwg-site/ContentMwg/images/homev2/desk/icon_common@2x.png);
+	background-repeat: no-repeat;
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	line-height: 30px;
+	vertical-align: middle;
+	background-size: 300px 200px;
+}
+
+#search-result {
+	position: absolute;
+	top: 33px;
+	z-index: 11;
+	width: 400px;
+	left: 0;
+	display: none;
+}
+
+.name-order {
+	color: #333;
+	font-size: 12px;
+	line-height: 14px;
+	padding: 6px 14px;
+	width: 10%;
+	border-radius: 4px;
+	text-align: center;
+	float: left;
+	margin: 0 21px;
+	background: rgba(255, 172, 10, .6);
+}
+
+.header__cart {
+	border-radius: 4px;
+	color: #333;
+	font-size: 12px;
+	line-height: 14px;
+	padding: 8px 10px;
+	width: 12%;
+	background: rgba(255, 172, 10, .6);
+}
+
+.header__cart .box-cart {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.header__cart i {
+	margin-right: 8px;
+}
+
+.header__cart i, .header__cart span {
+	display: inline-block;
+	vertical-align: middle;
+	font-weight: 700;
+}
+
+.iconnewglobal-cart {
+	background-position: -48px 0;
+	width: 25px;
+	height: 24px;
+}
+
+[class^="iconnewglobal-"], [class*="iconnewglobal-"] {
+	background-image:
+		url(//cdn.tgdd.vn/mwgcart/mwg-site/ContentMwg/images/homev2/desk/iconnew.png);
+	background-repeat: no-repeat;
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	line-height: 30px;
+	vertical-align: middle;
+	background-size: 310px 257px;
+}
+
+.header__listtop {
+	align-items: center;
+	display: flex;
+	width: 28%;
+}
+
+.header__listtop .divitem {
+	padding: 0 12px;
+	text-align: center;
+}
+
+.header__listtop .divitem a {
+	color: #333;
+	font-size: 14px;
+	line-height: 16px;
+}
+
+.bordercol {
+	background-color: #ffe56c;
+	height: 32px;
+	width: 1px;
+}
+
+.header__main {
+	background-color: #ffd400;
+	padding: 0 0 10px;
+}
+
+.header__top>div, .header__main>div {
+	width: 100%;
+	max-width: 1220px;
+	margin: auto;
+	padding: 0 10px;
+}
+
+.main-menu {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 -10px 0;
+	padding-top: 10px;
+}
+
+ul, ol {
+	list-style: none;
+}
+
+.main-menu li {
+	cursor: pointer;
+	padding: 10px;
+	position: relative;
+}
+
+.main-menu a {
+	color: #000;
+	font-size: 0;
+	line-height: 16px;
+}
+
+.main-menu li i {
+	margin-right: 5px;
+}
+
+.main-menu li i, .main-menu li span {
+	display: inline-block;
+	font-size: 14px;
+	vertical-align: middle;
+}
+
+.main-menu li i img {
+	height: 20px;
+	width: auto;
+	object-fit: cover;
+	vertical-align: middle;
+}
+
+.main-menu li i, .main-menu li span {
+	display: inline-block;
+	font-size: 14px;
+	vertical-align: middle;
+}
+
+.main-menu a span.has-child:after {
+	content: '';
+	width: 0;
+	height: 0;
+	border-top: 6px solid #333;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 5px;
+}
+
+.main-menu .navmwg {
+	display: none;
+	position: absolute;
+	background: #fff;
+	top: 43px;
+	width: 770px;
+	border-radius: 4px;
+	padding: 10px;
+	z-index: 10;
+	border: 1px solid #eee;
+	left: 0;
+	grid-auto-rows: minmax(min-content, max-content);
+	grid-template-columns: repeat(4, auto);
+}
+
+.main-menu .navmwg .item-child:first-child {
+	grid-row: 1/4;
+}
+
+.main-menu .navmwg div {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.main-menu .navmwg strong {
+	text-transform: uppercase;
+	border-bottom: 1px solid #eee;
+	font-size: 13px;
+	padding-bottom: 5px;
+	color: #333;
+}
+
+.main-menu .navmwg div a {
+	display: block;
+	padding: 10px 5px 0 0;
+	color: #000;
+	font-size: 11px;
+	position: relative;
+}
+</style>
+</head>
+<body>
+	<header class="header  " data-sub="0">
+		<div class="header__top">
+			<div>
+				<a href="/" class="header__logo"> <i class="iconnewglobal-logo"></i>
+				</a> <a href="javascript" class="header__address"
+					onclick="OpenLocation()"> Xem giá, tồn kho tại: <span
+					data-province="3" data-district="0" data-ward="0">P.17, Bình
+						Thạnh, Hồ Chí Minh</span>
+				</a>
+				<form action="/tim-kiem" onsubmit="return suggestSearch(event);"
+					class="header__search">
+					<input id="skw" type="text" class="input-search"
+						onkeyup="suggestSearch(event);" placeholder="Bạn tìm gì..."
+						name="key" autocomplete="off" maxlength="100">
+					<button type="submit">
+						<i class="icon-search"></i>
+					</button>
+					<div id="search-result"></div>
+				</form>
+				<a href="/lich-su-mua-hang" class="name-order"> Lịch sử đơn hàng
+				</a> <a href="/cart" class="header__cart menu-info active">
+					<div class="box-cart">
+						<i class="iconnewglobal-cart"></i> <span
+							class="cart-number has-cart">3</span>
+					</div> <span>Giỏ hàng</span>
+				</a>
+				<div class="header__listtop">
+					<div class="divitem">
+						<a href="/tin-tuc">24h<br>Công nghệ
+						</a>
+					</div>
+					<div class="bordercol"></div>
+					<div class="divitem">
+						<a href="/hoi-dap">Hỏi Đáp</a>
+					</div>
+					<div class="bordercol"></div>
+					<div class="divitem">
+						<a href="/game-app">Game App</a>
+					</div>
+				</div>
+
+
+
+			</div>
+		</div>
+		<div class="header__main">
+			<div>
+				<ul class="main-menu">
+					<li class=""><a href="/dtdd"> <i> <img
+								src="https://cdn.tgdd.vn//content/icon-phone-96x96-2.png">
+						</i> <span class="">Điện thoại</span>
+					</a></li>
+					<li class=""><a href="/laptop-ldp"> <i> <img
+								src="https://cdn.tgdd.vn//content/icon-laptop-96x96-1.png">
+						</i> <span class="">Laptop</span>
+					</a></li>
+					<li class=""><a href="/may-tinh-bang"> <i> <img
+								src="https://cdn.tgdd.vn//content/icon-tablet-96x96-1.png">
+						</i> <span class="">Tablet</span>
+					</a></li>
+					<li class="has-list"><a href="/phu-kien"> <i> <img
+								src="https://cdn.tgdd.vn//content/icon-phu-kien-96x96-1.png">
+						</i> <span class="has-child">Phụ kiện</span>
+					</a>
+						<div class="navmwg ">
+							<div class="item-child ">
+								<strong> Phụ kiện di động </strong> <a href="/sac-dtdd"><h3>Sạc
+										dự phòng</h3></a> <a href="/sac-cap"><h3>Sạc, cáp</h3></a> <a
+									href="/op-lung-flipcover"><h3>Ốp lưng điện thoại</h3></a> <a
+									href="/op-lung-may-tinh-bang"><h3>Ốp lưng máy tính
+										bảng</h3></a> <a href="/mieng-dan-man-hinh"><h3>Miếng dán màn
+										hình</h3></a> <a href="/gay-tu-suong"><h3>Gậy chụp ảnh, Gimbal</h3></a>
+								<a href="/gia-do-dien-thoai"><h3>Giá đỡ điện thoại</h3></a> <a
+									href="/de-moc-dien-thoai"><h3>Đế, móc điện thoại</h3></a> <a
+									href="/tui-chong-nuoc"><h3>Túi chống nước</h3></a> <a
+									href="/tui-dung-airpods"><h3>Túi đựng AirPods</h3></a> <a
+									href="/airtag"><h3>AirTag</h3></a> <a
+									href="/phu-kien-thong-minh"><h3>Phụ kiện Tablet</h3></a>
+							</div>
+							<div class="item-child ">
+								<strong> Phụ kiện laptop </strong> <a href="/chuot-ban-phim"><h3>Chuột,
+										bàn phím</h3></a> <a href="/thiet-bi-mang"><h3>Thiết bị mạng</h3></a> <a
+									href="/camera-giam-sat"><h3>Camera, webcam</h3></a> <a
+									href="/tui-chong-soc"><h3>Balo, túi chống sốc</h3></a> <a
+									href="/gia-do-dien-thoai?g=de-laptop-macbook"><h3>Giá
+										đỡ laptop</h3></a> <a href="/phan-mem"><h3>Phần mềm</h3></a>
+							</div>
+							<div class="item-child ">
+								<strong> Thiết bị nhà thông minh </strong> <a
+									href="/khoa-dien-tu"><h3>Khóa điện tử</h3></a> <a
+									href="/android-tv-box"><h3>TV Box</h3></a> <a
+									href="/o-cam-thong-minh"><h3>Ổ cắm, bóng đèn thông
+										minh</h3></a> <a href="/may-chieu"><h3>Máy chiếu</h3></a> <a
+									href="/but-trinh-chieu"><h3>Bút trình chiếu</h3></a>
+							</div>
+							<div class="item-child ">
+								<strong> Thương hiệu hàng đầu </strong> <a
+									href="/phu-kien/apple"><h3>Apple</h3></a> <a
+									href="/phu-kien/samsung"><h3>Samsung</h3></a> <a
+									href="/phu-kien/sony"><h3>Sony</h3></a> <a href="/phu-kien/jbl"><h3>JBL</h3></a>
+								<a href="/phu-kien/xiaomi"><h3>Xiaomi</h3></a>
+							</div>
+							<div class="item-child ">
+								<strong> Thiết bị âm thanh </strong> <a href="/tai-nghe"><h3>Tai
+										nghe</h3></a> <a href="/loa-laptop"><h3>Loa</h3></a>
+							</div>
+							<div class="item-child ">
+								<strong> Thiết bị lưu trữ </strong> <a href="/o-cung-di-dong"><h3>Ổ
+										cứng di động</h3></a> <a href="/the-nho-dien-thoai"><h3>Thẻ
+										nhớ</h3></a> <a href="/usb"><h3>USB</h3></a>
+							</div>
+							<div class="item-child ">
+								<strong> Phụ kiện khác </strong> <a href="/phu-kien-oto"><h3>Phụ
+										kiện ô tô</h3></a> <a href="/may-tinh-cam-tay"><h3>Máy tính
+										cầm tay</h3></a> <a href="/quat-mini"><h3>Quạt mini</h3></a> <a
+									href="/pin"><h3>Pin tiểu</h3></a>
+							</div>
+						</div></li>
+					<li class=""><a href="/dong-ho-thong-minh-ldp"> <i> <img
+								src="https://cdn.tgdd.vn//content/icon-smartwatch-96x96-1.png">
+						</i> <span class="">Smartwatch</span>
+					</a></li>
+					<li class=""><a href="/dong-ho"> <i> <img
+								src="https://cdn.tgdd.vn//content/watch-icon-96x96.png">
+						</i> <span class="">Đồng hồ</span>
+					</a></li>
+					<li class="has-list"><a href="/pc-may-in"> <i> <img
+								src="https://cdn.tgdd.vn//content/icon-pc-96x96.png">
+						</i> <span class="has-child">PC, Máy in</span>
+					</a>
+						<div class="navmwg limit-width">
+							<div class="item-child no-child-final">
+								<a href="/may-in"><h3>Máy in</h3></a>
+							</div>
+							<div class="item-child no-child-final">
+								<a href="/muc-in"><h3>Mực in</h3></a>
+							</div>
+							<div class="item-child no-child-final">
+								<a href="/man-hinh-may-tinh"><h3>Màn hình máy tính</h3></a>
+							</div>
+							<div class="item-child no-child-final">
+								<a href="/may-tinh-de-ban"><h3>Máy tính để bàn</h3></a>
+							</div>
+						</div></li>
+					<li class=""><a href="/may-doi-tra"> <i> <img>
+						</i> <span class="">Máy cũ giá rẻ</span>
+					</a></li>
+					<li class=""><a href="/sim-so-dep"> <i> <img>
+						</i> <span class="">Sim, Thẻ cào</span>
+					</a></li>
+					<li class="has-list"><a href="/tien-ich"> <i> <img>
+						</i> <span class="has-child">Dịch vụ tiện ích</span>
+					</a>
+						<div class="navmwg limit-width">
+							<div class="item-child no-child-final">
+								<a href="/tien-ich/thanh-toan-tra-gop"><h3>Đóng tiền
+										trả góp</h3></a>
+							</div>
+							<div class="item-child no-child-final">
+								<a href="/tien-ich/thanh-toan-tien-dien"><h3>Đóng tiền
+										điện</h3></a>
+							</div>
+							<div class="item-child no-child-final">
+								<a href="/tien-ich/thanh-toan-tien-nuoc"><h3>Đóng tiền
+										nước</h3></a>
+							</div>
+							<div class="item-child no-child-final">
+								<a href="/tien-ich/thanh-toan-internet-fpt"><h3>Đóng
+										tiền net FPT</h3></a>
+							</div>
+							<div class="item-child no-child-final">
+								<a href="/tien-ich/thanh-toan-internet-vnpt"><h3>Đóng
+										tiền net, cáp VNPT</h3></a>
+							</div>
+							<div class="item-child no-child-final">
+								<a href="/tien-ich/thanh-toan-bao-hiem"><h3>Đóng tiền
+										bảo hiểm</h3></a>
+							</div>
+							<div class="item-child no-child-final">
+								<a href="/tien-ich/thanh-toan-ve-tau-xe"><h3>Đóng tiền
+										vé tàu, xe, máy bay</h3></a>
+							</div>
+							<div class="item-child no-child-final">
+								<a href="/tien-ich/thanh-toan-vien-phi"><h3>Đóng viện
+										phí ĐH Y Dược TP. HCM</h3></a>
+							</div>
+							<div class="item-child no-child-final">
+								<a href="/tien-ich/nap-tien-dien-thoai-tra-sau"><h3>Đóng
+										cước điện thoại trả sau</h3></a>
+							</div>
+							<div class="item-child no-child-final">
+								<a href="/tien-ich/bao-hiem-o-to-xe-may"><h3>Mua bảo
+										hiểm xe máy, ô tô</h3></a>
+							</div>
+						</div></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+</body>
+</html>

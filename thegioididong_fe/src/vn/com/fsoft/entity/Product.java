@@ -1,42 +1,20 @@
 package vn.com.fsoft.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "product")
 public class Product {
 
-	@Id
-	@Column(name = "product_id")
 	private String productID;
-	
-	@Column(name = "product_name")
 	private String productName;
-	
-	@Column(name = "price")
 	private Float price;
-	
-	@Column(name = "manufacturer")
+
 	private String manufacturerID;
-	
-	@Column(name = "category_id")
 	private Integer categoryID;
-	
-	@Column(name = "product_warranty")
+
 	private Integer productWarranty;
-	
-	@Column(name = "image")
 	private String imagelink;
-	
-	@Column(name = "status")
+
 	private Boolean status;
-	
-	@Column(name = "brand_id")
 	private Integer brand;
-	
+
 	public Product() {
 
 	}
