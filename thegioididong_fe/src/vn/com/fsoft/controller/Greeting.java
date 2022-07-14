@@ -1,8 +1,13 @@
 package vn.com.fsoft.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 
@@ -30,5 +35,51 @@ public class Greeting {
         model.addAttribute("productDTO", response.getBody());
         return "test";
     }
+    
+    @GetMapping(value = {"/","/home"})
+    public String home(Model model) {
+        RestTemplate restTemplate = new RestTemplate();
+        String resourceUrl = "http://localhost:8080/product/home";
+        ResponseEntity<Product[]> respone = restTemplate.getForEntity(resourceUrl, Product[].class);
+        Product[] product = respone.getBody();
+        System.out.println("product :"+ product);
+        model.addAttribute("product",product);
+    	return "home";
+    }
+    
+    @GetMapping(value = "/get-vivo")
+    public String getVivo(Model model) {
+    	RestTemplate restTemplate = new RestTemplate();
+        String resourceUrl = "http://localhost:8080/product/get-vivo";
+        ResponseEntity<Product[]> respone = restTemplate.getForEntity(resourceUrl, Product[].class);
+        Product[] product = respone.getBody();
+        model.addAttribute("product",product);
+    	return "product";
+    }
+    
+    // chua test xong//
+    @GetMapping(value = "/get-detail/{productID}")
+    public String getVivo(Model model,@PathVariable("productID") String productID) {
+    	RestTemplate restTemplate = new RestTemplate();
+        String resourceUrl = "http://localhost:8080/product/get-product-by-id/{productID}";
+        ResponseEntity<Product[]> respone = restTemplate.getForEntity(resourceUrl, Product[].class);
+        Product[] product = respone.getBody();
+        model.addAttribute("product",product);
+    	return "product";
+    }
+    
+    // da test ///
+    @RequestMapping(value = "/getall")
+    public String getAll(Model model){
+        RestTemplate restTemplate = new RestTemplate();
+        String resourceUrl = "http://localhost:8080/product/test";
+        ResponseEntity<Product[]> respone = restTemplate.getForEntity(resourceUrl, Product[].class);
+        Product[] product = respone.getBody();
+        System.out.println("product :"+ product);
+        model.addAttribute("product",product);
+    	return "test";
+    }
+
+
     
 }

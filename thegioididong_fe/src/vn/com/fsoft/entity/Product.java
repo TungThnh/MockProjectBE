@@ -1,24 +1,20 @@
 package vn.com.fsoft.entity;
 
+
 public class Product {
 
 	private String productID;
 	private String productName;
 	private Float price;
-
 	private String manufacturerID;
 	private Integer categoryID;
-
 	private Integer productWarranty;
 	private String imagelink;
-
 	private Boolean status;
 	private Integer brand;
-
 	public Product() {
 
 	}
-
 	public Product(String productID, String productName, Float price, String manufacturerID, Integer categoryID,
 			Integer productWarranty, String imagelink, Boolean status, Integer brand) {
 		this.productID = productID;
