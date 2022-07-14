@@ -24,8 +24,8 @@ td {
 			<th>Name</th>
 		</tr>
 		<tr th:each="LIST_CATE : ${category}">
-			<td th:text="${LIST_CATE.categoryID}"></td>
-			<td th:text="${LIST_CATE.categoryName}"></td>
+			<td th:text="${LIST_CATE.categoryID}"> </td>
+			<td><a th:href="@{/product/get-product-by-category/{categoryID}(categoryID=${LIST_CATE.categoryID})}"><span th:text="${LIST_CATE.categoryName}"></span></a></td>
 		</tr>
 	</table>
 		<div style="width: 40%; margin: auto;">

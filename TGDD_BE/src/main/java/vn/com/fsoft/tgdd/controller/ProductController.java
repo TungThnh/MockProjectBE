@@ -23,7 +23,7 @@ import vn.com.fsoft.tgdd.entity.Product;
 import vn.com.fsoft.tgdd.service.CategoryService;
 import vn.com.fsoft.tgdd.service.ProductService;
 
-@Controller
+@RestController
 @RequestMapping("product")
 public class ProductController {
 
@@ -42,12 +42,41 @@ public class ProductController {
 //		return "product";
 //	}
 
+	//test local //
 	@RequestMapping("/get-all-product")
 	public String getAllProduct(Model model, @Param("keyword") String keyword) {
 		List<Product> Lproduct = proService.listAll(keyword);
 		model.addAttribute("product", Lproduct);
 		model.addAttribute("keyword", keyword);
 		return "product";
+	}
+	@RequestMapping("/get-product-by-category/{categoryID}")
+	public String getProductByCate(Model model, @PathVariable("categoryID") Integer cateID) {
+		List<Product> Lproduct = proService.findByCategoryID(cateID);
+		model.addAttribute("product", Lproduct);
+		return "product";
+	}
+	
+	
+	//test connect to FE//
+	
+	@RequestMapping("/home")
+	public List<Product> home(Model model) {
+		List<Product> Lproduct = proService.findAll();
+		return Lproduct;
+	}
+	@RequestMapping("/get-vivo")
+	public List<Product> getVivo(Model model){
+		List<Product> Lproduct = proService.findByBrandID(12);
+		model.addAttribute("product", Lproduct);
+		return Lproduct;
+	}
+	@RequestMapping("/get-product-by-id/{productID}")
+	public Product getProduct(Model model,@PathVariable("productID") String proID) {
+		Product product = proService.findByID(proID);
+		System.out.println(product);
+		model.addAttribute("product", product);
+		return product;
 	}
 	
 //	@GetMapping("/get-all-product")
@@ -65,7 +94,7 @@ public class ProductController {
 		List<Category> ListCate = cateService.findAll();
 		model.addAttribute("listCate", ListCate);
 		model.addAttribute("product-form", product);
-		return "add-product";
+		return "addProductPage";
 	}
 
 	@PostMapping("/save-product")

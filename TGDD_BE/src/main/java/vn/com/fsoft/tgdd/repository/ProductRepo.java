@@ -18,4 +18,11 @@ public interface ProductRepo extends JpaRepository<Product, String>{
             "FROM Product p INNER JOIN Category c ON p.categoryID = c.categoryID INNER JOIN Brand b ON p.brand = b.brandID " +
             "WHERE c.categoryName LIKE %?1% OR p.productName LIKE %?1% OR b.brandName LIKE %?1%")
     public List<Product> findProductByKeyword(String keyword);
+    
+    @Query("SELECT p "+
+    		"FROM Product p WHERE p.categoryID = ?1")
+    public List<Product> findByCategoryID(Integer categoryID);
+    @Query("SELECT p "+
+    		"FROM Product p WHERE p.brand = ?1")
+    public List<Product> findByBrand(Integer brand);
 }

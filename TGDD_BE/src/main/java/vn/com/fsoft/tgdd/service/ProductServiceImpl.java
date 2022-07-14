@@ -2,7 +2,6 @@ package vn.com.fsoft.tgdd.service;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
@@ -48,19 +47,6 @@ public class ProductServiceImpl implements ProductService {
 		List<Product> listProduct = productRepo.findAll();
 //		decodeMethod(listProduct);
 		return listProduct;
-	}
-	
-	@Override
-	public List<Product> findAllByCategory(int cateID){
-		List<Product> tmp = productRepo.findAll();
-		List<Product> result = new ArrayList<>();
-		int i;
-		for (i = 0; i<tmp.size(); i++) {
-			if (tmp.get(i).getCategoryID() == cateID) {
-				result.add(tmp.get(i));
-			}
-		}
-		return result;
 	}
 
 	@Override
@@ -114,6 +100,18 @@ public class ProductServiceImpl implements ProductService {
 			e.printStackTrace();
 		}
 		return editedImglink;
+	}
+
+	@Override
+	public List<Product> findByCategoryID(Integer categoryID) {
+		List<Product> product = productRepo.findByCategoryID(categoryID);
+		return product;
+	}
+
+	@Override
+	public List<Product> findByBrandID(Integer brandID) {
+		List<Product> product = productRepo.findByBrand(brandID);
+		return product;
 	}
 
 }
