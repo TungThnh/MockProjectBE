@@ -15,8 +15,8 @@ public class Orders {
 	@Column(name = "order_id")
 	private Integer orderID;
 	
-	@Column(name = "customer_id")
-	private Integer customerID;
+	@Column(name = "phone_number")
+	private int phone_number;
 	
 	@Column(name = "time_created")
 	private Date timeCreated;
@@ -28,9 +28,9 @@ public class Orders {
 
 	}
 
-	public Orders(Integer orderID, Integer customerID, Date timeCreated, Float totalPrice) {
+	public Orders(Integer orderID, int phone_number, Date timeCreated, Float totalPrice) {
 		this.orderID = orderID;
-		this.customerID = customerID;
+		this.phone_number = phone_number;
 		this.timeCreated = timeCreated;
 		this.totalPrice = totalPrice;
 	}
@@ -43,12 +43,13 @@ public class Orders {
 		this.orderID = orderID;
 	}
 
-	public Integer getCustomerID() {
-		return customerID;
+
+	public int getPhone_number() {
+		return phone_number;
 	}
 
-	public void setCustomerID(Integer customerID) {
-		this.customerID = customerID;
+	public void setPhone_number(int phone_number) {
+		this.phone_number = phone_number;
 	}
 
 	public Date getTimeCreated() {

@@ -23,7 +23,7 @@ public class Product {
 	private String manufacturerID;
 	
 	@Column(name = "category_id")
-	private Integer categoryID;
+	private String categoryID;
 	
 	@Column(name = "product_warranty")
 	private Integer productWarranty;
@@ -41,7 +41,7 @@ public class Product {
 
 	}
 
-	public Product(String productID, String productName, Float price, String manufacturerID, Integer categoryID,
+	public Product(String productID, String productName, Float price, String manufacturerID, String categoryID,
 			Integer productWarranty, String imagelink, Boolean status, Integer brand) {
 		this.productID = productID;
 		this.productName = productName;
@@ -86,11 +86,11 @@ public class Product {
 		this.manufacturerID = manufacturerID;
 	}
 
-	public Integer getCategoryID() {
+	public String getCategoryID() {
 		return categoryID;
 	}
 
-	public void setCategoryID(Integer categoryID) {
+	public void setCategoryID(String categoryID) {
 		this.categoryID = categoryID;
 	}
 

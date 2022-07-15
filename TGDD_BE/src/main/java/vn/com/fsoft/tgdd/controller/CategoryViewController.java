@@ -22,23 +22,23 @@ public class CategoryViewController {
 	ProductService proService;
 
 	@GetMapping("/{id}")
-	public ResponseEntity<?> getListProductByCategory(@PathVariable int id) {
+	public ResponseEntity<?> getListProductByCategory(@PathVariable String id) {
 		List<Product> listProduct = proService.findByCategoryID(id);
 		return ResponseEntity.ok(listProduct);
 	}
 	
-	@GetMapping("/laptop-ldp")
-	void handleLaptop(HttpServletResponse response) throws IOException {
-	    response.sendRedirect("1/");
-	  }
-
-	@GetMapping("/dien-thoai")
-	void handlePhone(HttpServletResponse response) throws IOException {
-	    response.sendRedirect("2/");
-	  }
-
-	@GetMapping("/may-tinh-bang")
-	void handleTab(HttpServletResponse response) throws IOException {
-	    response.sendRedirect("6/");
-	  }
+//	@GetMapping("/laptop-ldp")
+//	void handleLaptop(HttpServletResponse response) throws IOException {
+//	    response.sendRedirect("1/");
+//	  }
+//
+//	@GetMapping("/dien-thoai")
+//	void handlePhone(HttpServletResponse response) throws IOException {
+//	    response.sendRedirect("2/");
+//	  }
+//
+//	@GetMapping("/may-tinh-bang")
+//	void handleTab(HttpServletResponse response) throws IOException {
+//	    response.sendRedirect("6/");
+//	  }
 }

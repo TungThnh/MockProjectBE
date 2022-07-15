@@ -9,14 +9,11 @@ import javax.persistence.Table;
 @Table(name = "customer")
 public class Customer {
 	@Id
-	@Column(name = "customer_id")
-	private Integer customerID;
+	@Column(name = "phone_number")
+	private int phoneNumber;
 	
 	@Column(name = "full_name")
 	private String fullName;
-	
-	@Column(name = "phone_number")
-	private int phoneNumber;
 	
 	@Column(name = "gender")
 	private boolean gender;
@@ -37,12 +34,12 @@ public class Customer {
 	
 	}
 
-	public Customer(Integer customerID, String fullName, int phoneNumber, boolean gender, String address, String city,
-			String district, String ward) {
+	
 
-		this.customerID = customerID;
-		this.fullName = fullName;
+	public Customer(int phoneNumber, String fullName, boolean gender, String address, String city, String district,
+			String ward) {
 		this.phoneNumber = phoneNumber;
+		this.fullName = fullName;
 		this.gender = gender;
 		this.address = address;
 		this.city = city;
@@ -50,13 +47,6 @@ public class Customer {
 		this.ward = ward;
 	}
 
-	public Integer getCustomerID() {
-		return customerID;
-	}
-
-	public void setCustomerID(Integer customerID) {
-		this.customerID = customerID;
-	}
 
 	public String getFullName() {
 		return fullName;
@@ -113,7 +103,5 @@ public class Customer {
 	public void setWard(String ward) {
 		this.ward = ward;
 	}
-	
-	
 	
 }

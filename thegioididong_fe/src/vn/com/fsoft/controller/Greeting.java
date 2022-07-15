@@ -2,6 +2,7 @@ package vn.com.fsoft.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale.Category;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -80,6 +81,10 @@ public class Greeting {
     	return "test";
     }
 
-
+    @PostMapping(value = "/add-category") 
+    public Category addCate() {
+    	Category cate = New Category();
+    	cate.ser
+    }
     
 }

@@ -21,7 +21,7 @@ public interface ProductRepo extends JpaRepository<Product, String>{
     
     @Query("SELECT p "+
     		"FROM Product p WHERE p.categoryID = ?1")
-    public List<Product> findByCategoryID(Integer categoryID);
+    public List<Product> findByCategoryID(String categoryID);
     @Query("SELECT p "+
     		"FROM Product p WHERE p.brand = ?1")
     public List<Product> findByBrand(Integer brand);

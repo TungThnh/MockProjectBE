@@ -52,7 +52,7 @@ public class ProductController {
 	}
 
 	@RequestMapping("/get-product-by-category/{categoryID}")
-	public String getProductByCate(Model model, @PathVariable("categoryID") Integer cateID) {
+	public String getProductByCate(Model model, @PathVariable("categoryID") String cateID) {
 		List<Product> Lproduct = proService.findByCategoryID(cateID);
 		model.addAttribute("product", Lproduct);
 		return "product";
