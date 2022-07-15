@@ -58,12 +58,23 @@ public class Greeting {
     }
     
     // chua test xong//
-    @GetMapping(value = "/get-detail/{productID}")
-    public String getVivo(Model model,@PathVariable("productID") String productID) {
+    /*@GetMapping(value = "/get-detail/{productID}")
+    public String getVivo(Model model,@PathVariable String productID) {
     	RestTemplate restTemplate = new RestTemplate();
-        String resourceUrl = "http://localhost:8080/product/get-product-by-id/{productID}";
+        String resourceUrl = "http://localhost:8080/product/get-product-by-id/" + productID;
         ResponseEntity<Product[]> respone = restTemplate.getForEntity(resourceUrl, Product[].class);
         Product[] product = respone.getBody();
+        model.addAttribute("product",product);
+    	return "product";
+    }
+    */
+    
+    @GetMapping(value = "/get-detail/{productID}")
+    public String getProductById(Model model,@PathVariable String productID) {
+    	RestTemplate restTemplate = new RestTemplate();
+        String resourceUrl = "http://localhost:8080/product/get-product-by-id/" + productID;
+        ResponseEntity<Product> respone = restTemplate.getForEntity(resourceUrl, Product.class);
+        Product product = respone.getBody();
         model.addAttribute("product",product);
     	return "product";
     }

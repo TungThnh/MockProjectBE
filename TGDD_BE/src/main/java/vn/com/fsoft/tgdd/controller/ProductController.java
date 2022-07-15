@@ -29,7 +29,7 @@ public class ProductController {
 
 	@Autowired
 	ProductService proService;
-	
+
 	@Autowired
 	CategoryService cateService;;
 ////////////////////////////////////Product ////////////////////////////////////////
@@ -42,7 +42,7 @@ public class ProductController {
 //		return "product";
 //	}
 
-	//test local //
+	// test local //
 	@RequestMapping("/get-all-product")
 	public String getAllProduct(Model model, @Param("keyword") String keyword) {
 		List<Product> Lproduct = proService.listAll(keyword);
@@ -50,35 +50,41 @@ public class ProductController {
 		model.addAttribute("keyword", keyword);
 		return "product";
 	}
+
 	@RequestMapping("/get-product-by-category/{categoryID}")
 	public String getProductByCate(Model model, @PathVariable("categoryID") Integer cateID) {
 		List<Product> Lproduct = proService.findByCategoryID(cateID);
 		model.addAttribute("product", Lproduct);
 		return "product";
 	}
-	
-	
-	//test connect to FE//
-	
+
+	// test connect to FE//
+
 	@RequestMapping("/home")
 	public List<Product> home(Model model) {
 		List<Product> Lproduct = proService.findAll();
 		return Lproduct;
 	}
+
 	@RequestMapping("/get-vivo")
-	public List<Product> getVivo(Model model){
+	public List<Product> getVivo(Model model) {
 		List<Product> Lproduct = proService.findByBrandID(12);
 		model.addAttribute("product", Lproduct);
 		return Lproduct;
 	}
+
 	@RequestMapping("/get-product-by-id/{productID}")
-	public Product getProduct(Model model,@PathVariable("productID") String proID) {
-		Product product = proService.findByID(proID);
-		System.out.println(product);
-		model.addAttribute("product", product);
-		return product;
+	public ResponseEntity<?> getProductByID(@PathVariable String productID) {
+		Product product = proService.findByID(productID);
+		return ResponseEntity.ok(product);
 	}
-	
+
+	/*
+	 * @RequestMapping("/get-product-by-id/{productID}") public Product
+	 * getProduct(Model model,@PathVariable String productID) { Product product =
+	 * proService.findByID(productID); System.out.println(product);
+	 * model.addAttribute("product", product); return product; }
+	 */
 //	@GetMapping("/get-all-product")
 //	public ResponseEntity<?> getAllistProduct(Model model) {
 //		List<Product> listProduct = proService.findAll();
@@ -86,7 +92,7 @@ public class ProductController {
 //		model.addAttribute("product", listProduct);
 //		return ResponseEntity.ok(listProduct);
 //	}
-	
+
 /////////// Add product /////////
 
 	@GetMapping("/add-product-page")
@@ -132,14 +138,11 @@ public class ProductController {
 		Product pro = proService.findByID(id);
 		pro.setStatus(false);
 		proService.saveProduct(pro);
-		List<Product> ListProduct= proService.findAll();
+		List<Product> ListProduct = proService.findAll();
 		model.addAttribute("Product", ListProduct);
 		return "product";
 
 	}
-
-
-
 
 //Decode image//
 

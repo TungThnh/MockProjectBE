@@ -21,14 +21,14 @@ public class HomeController {
 	
 	@GetMapping("home-phone")
 	public ResponseEntity<?> getPhoneProduct() {
-		List<Product> listProduct = proService.findAllByCategory(2);
+		List<Product> listProduct = proService.findByCategoryID(2);
 		return ResponseEntity.ok(listProduct);
 	}
 	
 	@GetMapping("home-laptop-tablet")
 	public ResponseEntity<?> getLapTabProduct() {
-		List<Product> listProductLap = proService.findAllByCategory(1);
-		List<Product> listProductTab = proService.findAllByCategory(6);
+		List<Product> listProductLap = proService.findByCategoryID(1);
+		List<Product> listProductTab = proService.findByCategoryID(6);
 		listProductLap.addAll(listProductTab);
 		return ResponseEntity.ok(listProductLap);
 	}
@@ -36,15 +36,15 @@ public class HomeController {
 	
 	@GetMapping("home-accessory")
 	public ResponseEntity<?> getAccessory() {
-		List<Product> listProductHeadPhone = proService.findAllByCategory(4);
-		List<Product> listProductMouse = proService.findAllByCategory(5);
+		List<Product> listProductHeadPhone = proService.findByCategoryID(4);
+		List<Product> listProductMouse = proService.findByCategoryID(5);
 		listProductHeadPhone.addAll(listProductMouse);
 		return ResponseEntity.ok(listProductHeadPhone);
 	}
 	
 	@GetMapping("home-watch")
 	public ResponseEntity<?> getWatchProduct() {
-		List<Product> listProduct = proService.findAllByCategory(7);
+		List<Product> listProduct = proService.findByCategoryID(7);
 		return ResponseEntity.ok(listProduct);
 	}
 	

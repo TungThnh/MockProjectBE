@@ -23,7 +23,7 @@ public class CategoryViewController {
 
 	@GetMapping("/{id}")
 	public ResponseEntity<?> getListProductByCategory(@PathVariable int id) {
-		List<Product> listProduct = proService.findAllByCategory(id);
+		List<Product> listProduct = proService.findByCategoryID(id);
 		return ResponseEntity.ok(listProduct);
 	}
 	
