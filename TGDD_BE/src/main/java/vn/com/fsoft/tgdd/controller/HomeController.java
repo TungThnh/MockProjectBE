@@ -17,7 +17,11 @@ public class HomeController {
 	
 	//@GetMapping("home-discount-product")
 	
-	
+	@GetMapping("homes")
+	public ResponseEntity<?> getHomeProduct() {
+		List<Product> listProduct = proService.findAll();
+		return ResponseEntity.ok(listProduct);
+	}
 	
 	@GetMapping("home-phone")
 	public ResponseEntity<?> getPhoneProduct() {
