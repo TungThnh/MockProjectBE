@@ -32,6 +32,12 @@ public class Category {
 	private String categoryParent;
 	
 	
+	
+	public Category() {
+	}
+
+
+
 	public Category(String categoryName, Boolean status) {
 		super();
 		this.categoryName = categoryName;

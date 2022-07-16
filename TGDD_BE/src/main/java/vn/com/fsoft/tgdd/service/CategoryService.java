@@ -10,9 +10,13 @@ public interface CategoryService {
 
     void save(Category category);
 
-    void delete(int categoryID);
+    void delete(String categoryID);
 
-    Category findByID(int categoryID);
+    Category findByID(String categoryID);
 
     List<Category> findAll();
+    
+    List<Category> getAllCateSub(String categoryID);
+    
+    List<Category> findAllByCateParent(String categoryParent);
 }

@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import vn.com.fsoft.tgdd.entity.Category;
 import vn.com.fsoft.tgdd.entity.Product;
+import vn.com.fsoft.tgdd.service.CategoryService;
 import vn.com.fsoft.tgdd.service.ProductService;
 
 @RestController
@@ -20,25 +22,26 @@ import vn.com.fsoft.tgdd.service.ProductService;
 public class CategoryViewController {
 	@Autowired
 	ProductService proService;
+	
+	@Autowired
+	CategoryService cateService;
 
-	@GetMapping("/{id}")
+	@GetMapping("/{categoryId}")
+	public ResponseEntity<?> getListProductByCategory(@PathVariable String categoryId) {
+		List<Product> listProduct = proService.findByCategoryID(categoryId);
+		List<Category> listCate = cateService.getAllCateSub(categoryId);
+		for (int i = 0 ; i < listCate.size(); i++) {
+			listProduct.addAll(proService.findByCategoryID(listCate.get(i).getCategoryID()));
+		}
+ 		return ResponseEntity.ok(listProduct);
+	}
+
+	
+	/*
+	 * @GetMapping("/{id}")
 	public ResponseEntity<?> getListProductByCategory(@PathVariable String id) {
 		List<Product> listProduct = proService.findByCategoryID(id);
 		return ResponseEntity.ok(listProduct);
 	}
-	
-//	@GetMapping("/laptop-ldp")
-//	void handleLaptop(HttpServletResponse response) throws IOException {
-//	    response.sendRedirect("1/");
-//	  }
-//
-//	@GetMapping("/dien-thoai")
-//	void handlePhone(HttpServletResponse response) throws IOException {
-//	    response.sendRedirect("2/");
-//	  }
-//
-//	@GetMapping("/may-tinh-bang")
-//	void handleTab(HttpServletResponse response) throws IOException {
-//	    response.sendRedirect("6/");
-//	  }
+	 */
 }
