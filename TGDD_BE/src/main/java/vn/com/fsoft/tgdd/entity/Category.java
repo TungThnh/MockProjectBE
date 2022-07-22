@@ -17,7 +17,7 @@ public class Category {
 
 	@Id
 	@Column(name = "category_id")
-	private int categoryID;
+	private String categoryID;
 	
 	@Column(name = "category_name")
 	private String categoryName;
@@ -46,7 +46,7 @@ public class Category {
 	
 	
 	
-	public Category(int categoryID, String categoryName, Boolean status, Integer categoryLevel,
+	public Category(String categoryID, String categoryName, Boolean status, Integer categoryLevel,
 			String categoryParent) {
 		this.categoryID = categoryID;
 		this.categoryName = categoryName;
@@ -55,13 +55,13 @@ public class Category {
 		this.categoryParent = categoryParent;
 	}
 
-	public int getCategoryID() {
+	public String getCategoryID() {
 		return categoryID;
 	}
 
 
 
-	public void setCategoryID(int categoryID) {
+	public void setCategoryID(String categoryID) {
 		this.categoryID = categoryID;
 	}
 	public String getCategoryName() {
