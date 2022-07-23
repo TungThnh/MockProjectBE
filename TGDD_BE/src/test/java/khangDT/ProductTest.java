@@ -24,13 +24,5 @@ public class ProductTest {
 	@Autowired
 	private CategoryRepo cateRepo;
 	
-	
-	@Test
-	public void testcate() {
-		Category cate = new Category(1000,"testtttt", true);
-		Category savecate = cateRepo.save(cate);
-		
-		assertNotNull(savecate);
 
-	}
 }

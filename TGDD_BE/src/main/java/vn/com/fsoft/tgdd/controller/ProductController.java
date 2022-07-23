@@ -62,7 +62,13 @@ public class ProductController {
 
 	@RequestMapping("/home")
 	public List<Product> home(Model model) {
-		List<Product> Lproduct = proService.findAll();
+		List<Product> Lproduct = proService.findAllAD();
+		return Lproduct;
+	}
+	
+	@RequestMapping("/get-product")
+	public List<Product> getProduct(Model model) {
+		List<Product> Lproduct = proService.findAllAD();
 		return Lproduct;
 	}
 
@@ -78,6 +84,7 @@ public class ProductController {
 		Product product = proService.findByID(productID);
 		return ResponseEntity.ok(product);
 	}
+	
 
 	/*
 	 * @RequestMapping("/get-product-by-id/{productID}") public Product
@@ -108,7 +115,7 @@ public class ProductController {
 		Product imageEncodeProduct = encodeMethod(pro);
 		imageEncodeProduct.setStatus(true);
 		proService.saveProduct(imageEncodeProduct);
-		List<Product> listProduct = proService.findAll();
+		List<Product> listProduct = proService.findAllAD();
 		model.addAttribute("product", listProduct);
 		return "product";
 	}
@@ -127,7 +134,7 @@ public class ProductController {
 	public String saveProduct(Model model, @ModelAttribute("product") Product pro) throws IOException {
 		Product imageEncodeProduct = encodeMethod(pro);
 		proService.saveProduct(imageEncodeProduct);
-		List<Product> listProduct = proService.findAll();
+		List<Product> listProduct = proService.findAllAD();
 		model.addAttribute("product", listProduct);
 
 		return "product";
@@ -138,7 +145,7 @@ public class ProductController {
 		Product pro = proService.findByID(id);
 		pro.setStatus(false);
 		proService.saveProduct(pro);
-		List<Product> ListProduct = proService.findAll();
+		List<Product> ListProduct = proService.findAllAD();
 		model.addAttribute("Product", ListProduct);
 		return "product";
 

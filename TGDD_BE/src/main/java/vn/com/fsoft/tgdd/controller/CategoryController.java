@@ -77,7 +77,7 @@ public class CategoryController {
 	// Edit cate
 
 	@GetMapping("/edit-cate-page/{categoryID}")
-	public String loadEditPage(@PathVariable(name = "categoryID") int id, Model model) {
+	public String loadEditPage(@PathVariable(name = "categoryID") String id, Model model) {
 
 		Category cate = cateService.findByID(id);
 		model.addAttribute("category", cate);
@@ -100,7 +100,7 @@ public class CategoryController {
 	}
 
 	@GetMapping("/delete-cate/{categoryID}")
-	public String deleteCate(@PathVariable(name = "categoryID") int id, Model model) {
+	public String deleteCate(@PathVariable(name = "categoryID") String id, Model model) {
 		try {
 			Category cate = cateService.findByID(id);
 			cate.setStatus(false);

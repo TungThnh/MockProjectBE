@@ -19,7 +19,7 @@ public class HomeController {
 	
 	@GetMapping("homes")
 	public ResponseEntity<?> getHomeProduct() {
-		List<Product> listProduct = proService.findAll();
+		List<Product> listProduct = proService.findAllAD();
 		return ResponseEntity.ok(listProduct);
 	}
 

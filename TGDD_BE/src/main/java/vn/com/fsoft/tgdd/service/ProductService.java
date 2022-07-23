@@ -18,7 +18,9 @@ public interface ProductService {
 	
 	List<Product> findByBrandID(Integer brandID);
 	
-	List<Product> findAll();
+	List<Product> findAllAD();
+	
+	List<Product> findAllUS();
 
 	List<Product> listAll(String keyword); //search product
 }

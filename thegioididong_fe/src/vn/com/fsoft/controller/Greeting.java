@@ -2,7 +2,6 @@ package vn.com.fsoft.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale.Category;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -40,7 +39,7 @@ public class Greeting {
     @GetMapping(value = {"/","/home"})
     public String home(Model model) {
         RestTemplate restTemplate = new RestTemplate();
-        String resourceUrl = "http://localhost:8080/homes";
+        String resourceUrl = "http://localhost:8080/product/home";
         ResponseEntity<Product[]> respone = restTemplate.getForEntity(resourceUrl, Product[].class);
         Product[] product = respone.getBody();
         System.out.println("product :"+ product);
@@ -58,9 +57,9 @@ public class Greeting {
     	return "product";
     }
     
-
+    // chua test xong//
     @GetMapping(value = "/get-detail/{productID}")
-    public String getProductById(Model model,@PathVariable String productID) {
+    public String getVivo(Model model,@PathVariable("productID") String productID) {
     	RestTemplate restTemplate = new RestTemplate();
         String resourceUrl = "http://localhost:8080/product/get-product-by-id/" + productID;
         ResponseEntity<Product> respone = restTemplate.getForEntity(resourceUrl, Product.class);
@@ -81,10 +80,6 @@ public class Greeting {
     	return "test";
     }
 
-    @PostMapping(value = "/add-category") 
-    public Category addCate() {
-    	Category cate = New Category();
-    	cate.ser
-    }
+
     
 }

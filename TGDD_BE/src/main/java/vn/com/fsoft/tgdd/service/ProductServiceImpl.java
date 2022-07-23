@@ -43,7 +43,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 	
 	@Override
-	public List<Product> findAll() {
+	public List<Product> findAllAD() {
 		List<Product> listProduct = productRepo.findAll();
 //		decodeMethod(listProduct);
 		return listProduct;
@@ -112,6 +112,13 @@ public class ProductServiceImpl implements ProductService {
 	public List<Product> findByBrandID(Integer brandID) {
 		List<Product> product = productRepo.findByBrand(brandID);
 		return product;
+	}
+
+	@Override
+	public List<Product> findAllUS() {
+		List<Product> listProduct = productRepo.findAll();
+//		decodeMethod(listProduct);
+		return listProduct;
 	}
 
 }

@@ -17,7 +17,7 @@
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
 			<a class="navbar-brand" th:href="@{/}" href="#">
-				<img th:src="@{/images/logo.png}" src="../static/images/logo.png" width="auto" height="70"
+				<img th:src="@{/images/logo.png}" width="auto" height="70"
 					class="d-inline-block align-top" alt="" />
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -41,7 +41,7 @@
 	<section class="row" layout fragment="content">
 		<div class="container">
 
-			<form th:action="@{/admin/product/add}" method="post" th:object="${productDTO}"
+			<form th:action="@{/admin/product/add}" method="post" th:object="${product}"
 				enctype="multipart/form-data">
 				<div class="card">
 					<div class="card-header">
@@ -57,9 +57,6 @@
 										placeholder="Enter Product ID">
 									<small id="productIDHid" class="form-text text-muted">Product ID is required</small>
 								</div>
-
-
-								<input type="hidden" name="id" th:field="*{id}">
 								<div class="form-group">
 									<label for="productName">Product Name</label>
 									<input type="text" class="form-control" required th:field="*{productName}"
@@ -79,7 +76,7 @@
 								<div class="form-group">
 									<label for="manufacturer">Manufacturer Name</label>
 									<input type="text" class="form-control" name="manufacturer" id="manufacturer"
-										th:field="*{manufacturer}" aria-describedby="manufacturerHid"
+										th:field="*{manufacturerID}" aria-describedby="manufacturerHid"
 										placeholder="Enter Manufacturer">
 									<small id="manufacturerHid" class="form-text text-muted">Manufacturer name is
 										required</small>
@@ -104,73 +101,72 @@
 							</div>
 
 						<div class="col-3">
-							<div class="form-group">
-								<label for="quantity">Quantity</label>
-								<input type="number" class="form-control" name="quantity" id="quantity"
-									th:field="*{quantity}" placeholder="Quantity">
-							</div>
-
-							<div class="form-group">
-								<label for="weight">Weight in grams</label>
-								<input type="number" class="form-control" required th:field="*{weight}" name="weight"
-									id="weight" placeholder="Weight">
-							</div>
-
-<!-- 							<div class="input-group form-group"> -->
-<!-- 								<span class="input-group-text">Discount</span> -->
-<!-- 								<input type="number" name="discount" id="discount" th:field="*{discount}" -->
-<!-- 									class="form-control" placeholder="Discount"> -->
-<!-- 								<span class="input-group-text">%</span> -->
+<!-- 							<div class="form-group"> -->
+<!-- 								<label for="quantity">Quantity</label> -->
+<!-- 								<input type="number" class="form-control" name="quantity" id="quantity" -->
+<!-- 									th:field="*{quantity}" placeholder="Quantity"> -->
 <!-- 							</div> -->
 
-							<div class="form-group">
-								<label for="status">Status</label>
-								<select class="form-control" name="status" id="status" th:field="*{status}">
-									<option value="0">Out of stock</option>
-									<option value="1">On sale</option>
-								</select>
-							</div>
+<!-- 							<div class="form-group"> -->
+<!-- 								<label for="weight">Weight in grams</label> -->
+<!-- 								<input type="number" class="form-control" required th:field="*{weight}" name="weight" -->
+<!-- 									id="weight" placeholder="Weight"> -->
+<!-- 							</div> -->
+
+<!-- <!-- 							<div class="input-group form-group"> --> -->
+<!-- <!-- 								<span class="input-group-text">Discount</span> --> -->
+<!-- <!-- 								<input type="number" name="discount" id="discount" th:field="*{discount}" --> -->
+<!-- <!-- 									class="form-control" placeholder="Discount"> --> -->
+<!-- <!-- 								<span class="input-group-text">%</span> --> -->
+<!-- <!-- 							</div> --> -->
+
+<!-- 							<div class="form-group"> -->
+<!-- 								<label for="status">Status</label> -->
+<!-- 								<select class="form-control" name="status" id="status" th:field="*{status}"> -->
+<!-- 									<option value="0">Out of stock</option> -->
+<!-- 									<option value="1">On sale</option> -->
+<!-- 								</select> -->
+<!-- 							</div> -->
 							
 							<div class="form-group">
 									<label for="brandID">Brand ID </label>
-									<input type="number" class="form-control" required th:field="*{brandID}"
-										name="brandID" id="brandID" aria-describedby="brandIDHid"
-										placeholder="Enter Brand ID">
+									<input type="number" class="form-control" required th:field="*{brand}"
+										name="brand" id="brand" aria-describedby="brandIDHid"
+										placeholder="Enter Brand ">
 									<small id="brandIDHid" class="form-text text-muted">Brand ID is required</small>
 								</div>
 
 							<p>Product Image</p>
 							<div class="custom-file">
-								<input type="file" class="custom-file-input" name="productImage"
-									accept="image/jpeg, image/png, image/jpg" id="productImage" />
+								<input type="file" class="custom-file-input" name="imagelink"
+									accept="image/jpeg, image/png, image/jpg" id="imagelink" />
 								<label class="custom-file-label" for="productImage">Choose file</label>
 							</div>
-							<div class="form-group">
-								<img src="#" id="imgPreview" height="100px" width="100px"
-									th:src="@{${'/productImages/' + productDTO.imageName}}" style="margin-top: 20px"
-									alt=" ">
-							</div>
-							<input type="hidden" name="imgName" th:value="${productDTO.imagelink}">
+<!-- 							<div class="form-group"> -->
+<!-- 								<img src="#" id="imgPreview" height="100px" width="100px" -->
+<!-- 									th:src="@{${'/productImages/' + productDTO.imagelink}}" style="margin-top: 20px" -->
+<!-- 									alt=" "> -->
+<!-- 							</div> -->
 						</div>
 						</div>
 						
-						<div class="row">
-							<div class="col">
-								<div class="form-group">
-									<label for="description">Product Description</label>
-									<textarea class="form-control" rows="5" th:field="*{description}" name="description"
-										id="description"></textarea>
-								</div>
-							</div>
-						</div>
+<!-- 						<div class="row"> -->
+<!-- 							<div class="col"> -->
+<!-- 								<div class="form-group"> -->
+<!-- 									<label for="description">Product Description</label> -->
+<!-- 									<textarea class="form-control" rows="5" th:field="*{description}" name="description" -->
+<!-- 										id="description"></textarea> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
 					</div>
 
 					<div class="card-footer text-muted">
-						<a th:href=@{admin/product/add} class="btn btn-success">New</a>
-						<button class="btn btn-primary" th:text="${product.update? 'Update' : 'Save'}" >Save</button>
-						<a th:if="${product.update}" 
-						th:href="@{'admin/product/delete' + ${product.productID}}" 
-						class="btn btn-danger float-right">Delete</a>
+ 							<a th:href=@{admin/product/add} class="btn btn-success">New</a>
+<!-- 						<button class="btn btn-primary" th:text="${product.update? 'Update' : 'Save'}" >Save</button> -->
+<!-- 						<a th:if="${product.update}"  -->
+<!-- 						th:href="@{'admin/product/delete' + ${product.productID}}"  -->
+<!-- 						class="btn btn-danger float-right">Delete</a> -->
 					</div>
 				</div>
 			</form>
